@@ -6,6 +6,7 @@ import brainVault from "@/assets/trust/brain-vault.jpg";
 import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
+import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import {
   Activity, AlertTriangle, Brain, ChevronRight, Cpu, Database, Globe2,
   HeartPulse, Lock, MapPin, Menu, Mic, Radio, Shield, ShieldCheck, Siren,
@@ -47,14 +48,14 @@ function Nav() {
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container-trust">
-        <div className={`flex items-center justify-between rounded-full px-4 lg:px-6 py-2.5 transition-all ${scrolled ? "glass shadow-lg" : ""}`}>
+        <div className={`flex items-center justify-between rounded-full px-4 lg:px-6 py-2.5 transition-all ${scrolled ? "glass-dark shadow-2xl" : ""}`}>
           <a href="#top" className="flex items-center gap-3">
             <img src={logo} alt="TRUST logo" className="h-14 w-auto object-contain" />
-            <span className="font-semibold tracking-[0.25em] text-sm">TRUST</span>
+            <span className="font-semibold tracking-[0.25em] text-sm text-white">TRUST</span>
           </a>
           <nav className="hidden lg:flex items-center gap-1">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} className="px-3.5 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+              <a key={n.href} href={n.href} className="px-3.5 py-2 text-sm font-medium text-white/75 hover:text-white transition-colors">
                 {n.label}
               </a>
             ))}
@@ -62,7 +63,7 @@ function Nav() {
           <div className="hidden lg:block">
             <a href="#cta" className="btn-primary !py-2.5 !px-5 !text-xs">Request a Demo <ChevronRight className="h-4 w-4" /></a>
           </div>
-          <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
+          <button className="lg:hidden p-2 text-white" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -91,33 +92,45 @@ function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(184_80%_38%/0.3),transparent_50%)]" />
 
       <div className="container-trust relative">
-        <div className="max-w-4xl">
-          <div className="reveal pill bg-white/10 border border-white/15 text-white/90">
-            <Sparkles className="h-3.5 w-3.5" /> Predictive · Personalised · Researched · AI Driven
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="lg:col-span-7">
+            <div className="reveal pill bg-white/10 border border-white/15 text-white/90">
+              <Sparkles className="h-3.5 w-3.5" /> Predictive · Personalised · Researched · AI Driven
+            </div>
+            <h1 className="reveal mt-7 text-5xl md:text-6xl lg:text-[4.75rem] font-semibold leading-[0.95]">
+              Better <span className="font-serif italic text-sunset">Mental Health</span>,<br />
+              For Everyone.
+            </h1>
+            <p className="reveal mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+              TRUST replaces reactive treatment with predictive, personalised intervention —
+              an AI-assisted Digital Therapeutics platform for early risk detection,
+              relapse prevention, and real-time safety.
+            </p>
+            <div className="reveal mt-10 flex flex-wrap gap-3">
+              <a href="#cta" className="btn-primary">Request a Pilot <ChevronRight className="h-4 w-4" /></a>
+              <a href="#platform" className="btn-ghost !text-white !border-white/20 hover:!text-sunset hover:!border-sunset">Explore the Platform</a>
+            </div>
           </div>
-          <h1 className="reveal mt-7 text-5xl md:text-7xl lg:text-[5.5rem] font-semibold leading-[0.95]">
-            Better <span className="font-serif italic text-sunset">Mental Health</span>,<br />
-            For Everyone.
-          </h1>
-          <p className="reveal mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-            TRUST replaces reactive treatment with predictive, personalised intervention —
-            an AI-assisted Digital Therapeutics platform for early risk detection,
-            relapse prevention, and real-time safety.
-          </p>
-          <div className="reveal mt-10 flex flex-wrap gap-3">
-            <a href="#cta" className="btn-primary">Request a Pilot <ChevronRight className="h-4 w-4" /></a>
-            <a href="#platform" className="btn-ghost !text-white !border-white/20 hover:!text-sunset hover:!border-sunset">Explore the Platform</a>
-          </div>
-        </div>
 
-        {/* Video card */}
-        <div className="reveal mt-16 lg:mt-24 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black">
-          <iframe
-            src="https://drive.google.com/file/d/1DyFTcVue-SZoFlUnNgpqIVPC0Pje-fPZ/preview"
-            title="TRUST overview"
-            allow="autoplay"
-            className="absolute inset-0 w-full h-full"
-          />
+{/* Hero Video — Phone Mockup */}
+<div className="lg:col-span-5 flex justify-center">
+  <div className="reveal relative w-[280px] sm:w-[320px] rounded-[2.5rem] bg-white p-3 shadow-2xl border border-white/20">
+    <div className="overflow-hidden rounded-[2rem] bg-black aspect-[9/19.5]">
+      <video
+        src={trustDemoVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        controls
+        preload="auto"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>          
+
+
         </div>
 
         {/* stat strip */}
@@ -734,9 +747,11 @@ function Team() {
               <div className="p-6 lg:p-7">
                 <h3 className="text-xl font-semibold">{p.name}</h3>
                 <div className="text-sm uppercase tracking-widest text-teal mt-1">{p.role}</div>
-                <div className="mt-4 text-sm text-muted-foreground">
-  {p.role}
-</div>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  {(p.bullets ?? []).map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-sunset mt-1">•</span>{b}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
@@ -835,8 +850,7 @@ function Footer() {
     <footer className="bg-midnight text-white/60 border-t border-white/10">
       <div className="container-trust py-12 flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="TRUST logo" className="h-14 w-auto object-contain" />
-          <div>
+<img src={logo} alt="TRUST logo" className="h-14 w-auto object-contain" />          <div>
             <div className="font-semibold text-white tracking-[0.25em] text-sm">TRUST</div>
             <div className="text-xs">Therapeutic Recovery Understanding Support Technology</div>
           </div>
