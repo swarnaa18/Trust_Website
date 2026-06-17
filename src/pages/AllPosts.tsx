@@ -3,12 +3,7 @@ import Footer from '@/components/Footer';
 import BlogCard from '@/components/BlogCard';
 import PageFilter, { Post } from '@/components/PageFilter';
 import { useState } from 'react';
-import businessPost from '@/assets/business-post.jpg';
-import fashionPost from '@/assets/fashion-post.jpg';
-import techPost from '@/assets/tech-post.jpg';
-import lifestylePost from '@/assets/lifestyle-post.jpg';
-import fashionLifestyle from '@/assets/fashion-lifestyle.jpg';
-import workLifestyle from '@/assets/work-lifestyle.jpg';
+import brainVault from '@/assets/trust/brain-vault.jpg';
 
 const AllPosts = () => {
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
@@ -20,7 +15,7 @@ const AllPosts = () => {
       subcategory: "Digital Fashion", 
       date: "September 20, 2025",
       excerpt: "Explore how fashion bloggers and influencers have transformed the industry landscape.",
-      image: fashionPost,
+      image: brainVault,
       slug: "rise-of-fashion-blogging",
       tags: ["Influencers", "Social Media", "Fashion Industry"]
     },
@@ -30,7 +25,7 @@ const AllPosts = () => {
       subcategory: "Artificial Intelligence",
       date: "September 18, 2025",
       excerpt: "Discover how artificial intelligence is revolutionizing the way businesses operate.",
-      image: techPost,
+      image: brainVault,
       slug: "ai-machine-learning-business",
       tags: ["AI", "Machine Learning", "Business Automation"]
     },
@@ -40,7 +35,7 @@ const AllPosts = () => {
       subcategory: "Sustainability",
       date: "September 15, 2025", 
       excerpt: "Learn how to build a sustainable business that benefits both profit and planet.",
-      image: businessPost,
+      image: brainVault,
       slug: "sustainable-business-practices",
       tags: ["Sustainability", "Green Business", "Entrepreneurship"]
     },
@@ -50,7 +45,7 @@ const AllPosts = () => {
       subcategory: "Wellness",
       date: "September 12, 2025",
       excerpt: "Practical tips for incorporating mindfulness into your daily routine.",
-      image: lifestylePost,
+      image: brainVault,
       slug: "mindful-living-balance",
       tags: ["Mindfulness", "Wellness", "Work-Life Balance"]
     },
@@ -60,7 +55,7 @@ const AllPosts = () => {
       subcategory: "Future of Work",
       date: "September 10, 2025",
       excerpt: "Analyzing the evolution of remote work and what lies ahead.",
-      image: workLifestyle,
+      image: brainVault,
       slug: "future-remote-work",
       tags: ["Remote Work", "Future Trends", "Digital Workplace"]
     },
@@ -70,7 +65,7 @@ const AllPosts = () => {
       subcategory: "Fashion Events",
       date: "September 8, 2025",
       excerpt: "A comprehensive look at the standout moments from this season's fashion weeks.",
-      image: fashionLifestyle,
+      image: brainVault,
       slug: "fashion-week-highlights",
       tags: ["Fashion Week", "Trends", "Runway"]
     },
@@ -80,7 +75,7 @@ const AllPosts = () => {
       subcategory: "Blockchain",
       date: "September 5, 2025",
       excerpt: "Exploring innovative applications of blockchain in various industries.",
-      image: techPost,
+      image: brainVault,
       slug: "blockchain-beyond-crypto",
       tags: ["Blockchain", "Cryptocurrency", "Innovation"]
     },
@@ -90,7 +85,7 @@ const AllPosts = () => {
       subcategory: "Personal Branding",
       date: "September 3, 2025",
       excerpt: "Essential strategies for creating and maintaining your online presence.",
-      image: businessPost,
+      image: brainVault,
       slug: "personal-brand-digital-age",
       tags: ["Personal Branding", "Digital Marketing", "Online Presence"]
     },
@@ -100,7 +95,7 @@ const AllPosts = () => {
       subcategory: "Health Trends",
       date: "September 1, 2025",
       excerpt: "Separating wellness fads from genuinely beneficial practices.",
-      image: lifestylePost,
+      image: brainVault,
       slug: "wellness-trends-worth-time",
       tags: ["Health", "Wellness Trends", "Self-Care"]
     }
