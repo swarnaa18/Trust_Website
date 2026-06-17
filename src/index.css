@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* TRUST brand — deep midnight + ocean teal + sunset accent */
+    --background: 210 40% 99%;
+    --foreground: 215 45% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 45% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 45% 10%;
+
+    --primary: 215 60% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 215 45% 15%;
+
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 184 80% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 90%;
+    --input: 215 25% 90%;
+    --ring: 184 80% 38%;
+
+    --radius: 1rem;
+
+    /* TRUST custom tokens */
+    --midnight: 215 60% 8%;
+    --midnight-2: 215 55% 14%;
+    --teal: 184 80% 38%;
+    --teal-glow: 184 90% 50%;
+    --sunset: 18 100% 60%;
+    --sunset-2: 350 85% 58%;
+    --gold: 38 90% 60%;
+
+    --grad-hero: radial-gradient(circle at 20% 20%, hsl(184 80% 38% / 0.25), transparent 60%),
+                 radial-gradient(circle at 80% 30%, hsl(18 100% 60% / 0.25), transparent 55%),
+                 linear-gradient(140deg, hsl(215 60% 8%), hsl(215 55% 14%));
+    --grad-sunset: linear-gradient(135deg, hsl(18 100% 60%), hsl(350 85% 58%));
+    --grad-ocean: linear-gradient(135deg, hsl(184 80% 38%), hsl(200 90% 45%));
+    --grad-brand: linear-gradient(135deg, hsl(18 100% 60%) 0%, hsl(350 85% 58%) 35%, hsl(184 80% 38%) 100%);
+
+    --shadow-soft: 0 1px 3px hsl(215 60% 8% / 0.05), 0 10px 30px -10px hsl(215 60% 8% / 0.08);
+    --shadow-glow: 0 20px 60px -20px hsl(184 80% 38% / 0.45);
+    --shadow-sunset: 0 20px 60px -20px hsl(18 100% 60% / 0.45);
+  }
+
+  .dark {
+    --background: 215 60% 6%;
+    --foreground: 210 40% 98%;
+    --card: 215 55% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 55% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 184 80% 50%;
+    --primary-foreground: 215 60% 8%;
+    --secondary: 215 40% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 40% 14%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 184 80% 45%;
+    --accent-foreground: 215 60% 8%;
+    --border: 215 40% 18%;
+    --input: 215 40% 18%;
+    --ring: 184 80% 50%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .font-serif { font-family: 'Instrument Serif', serif; }
+  h1, h2, h3, h4 { letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .container-trust { @apply mx-auto px-6 lg:px-10 max-w-7xl; }
+
+  .grad-text {
+    background: var(--grad-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(215 25% 90% / 0.8);
+  }
+  .glass-dark {
+    background: hsl(215 60% 8% / 0.5);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  .trust-card {
+    @apply rounded-2xl bg-card border border-border/60 p-6 lg:p-8 transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+  .trust-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -25px hsl(215 60% 8% / 0.18);
+    border-color: hsl(var(--teal) / 0.4);
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300;
+    background: var(--grad-sunset);
+    box-shadow: var(--shadow-sunset);
+  }
+  .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold border border-border/80 bg-card/60 backdrop-blur transition-all duration-300;
+  }
+  .btn-ghost:hover { border-color: hsl(var(--teal)); color: hsl(var(--teal)); }
+
+  .section { @apply py-24 lg:py-32; }
+  .eyebrow { @apply pill bg-secondary text-accent; }
+
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+}
+
+@layer utilities {
+  .bg-midnight { background: hsl(var(--midnight)); }
+  .bg-grad-hero { background: var(--grad-hero); }
+  .bg-grad-ocean { background: var(--grad-ocean); }
+  .bg-grad-sunset { background: var(--grad-sunset); }
+  .text-teal { color: hsl(var(--teal)); }
+  .text-sunset { color: hsl(var(--sunset)); }
+  .border-teal { border-color: hsl(var(--teal)); }
+
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
+  .animate-marquee { animation: marquee 40s linear infinite; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--teal) / 0.4); }
+  50% { box-shadow: 0 0 0 18px hsl(var(--teal) / 0); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
