@@ -8,11 +8,48 @@ import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import {
-  Activity, AlertTriangle, Brain, ChevronRight, Cpu, Database, Globe2,
-  HeartPulse, Lock, MapPin, Menu, Mic, Radio, Shield, ShieldCheck, Siren,
-  Smartphone, Sparkles, Stethoscope, Target, Users, Wifi, X, Wind, Layers,
-  Award, FlaskConical, TrendingUp, Building2, GraduationCap, Heart, Eye,
-  Bot, MousePointer2, Network, Pill, type LucideIcon
+  Activity,
+  AlertTriangle,
+  Award,
+  Bot,
+  Brain,
+  Building2,
+  ChevronRight,
+  Clock,
+  Cpu,
+  Database,
+  Eye,
+  FlaskConical,
+  Globe2,
+  GraduationCap,
+  Heart,
+  HeartPulse,
+  Layers,
+  Lock,
+  Mail,
+  MapPin,
+  Menu,
+  Mic,
+  MousePointer2,
+  Navigation,
+  Network,
+  Phone,
+  Pill,
+  Radio,
+  Send,
+  Shield,
+  ShieldCheck,
+  Siren,
+  Smartphone,
+  Sparkles,
+  Stethoscope,
+  Target,
+  TrendingUp,
+  Users,
+  Wifi,
+  Wind,
+  X,
+  type LucideIcon,
 } from "lucide-react";
 
 /* ---------- Reveal-on-scroll ---------- */
@@ -29,6 +66,7 @@ function useReveal() {
 }
 
 /* ---------- Nav ---------- */
+
 const NAV = [
   { label: "Crisis", href: "#crisis" },
   { label: "Platform", href: "#platform" },
@@ -60,7 +98,10 @@ function Nav() {
               </a>
             ))}
           </nav>
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-2">
+            <a href="#contact" className="btn-ghost !py-2.5 !px-4 !text-xs !text-white !border-white/25 hover:!text-sunset hover:!border-sunset">
+              <Navigation className="h-4 w-4" /> Locate Us
+            </a>
             <a href="#cta" className="btn-primary !py-2.5 !px-5 !text-xs">Request a Demo <ChevronRight className="h-4 w-4" /></a>
           </div>
           <button className="lg:hidden p-2 text-white" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -74,6 +115,7 @@ function Nav() {
                 {n.label}
               </a>
             ))}
+            <a href="#contact" onClick={() => setOpen(false)} className="btn-ghost w-full mt-2"><Navigation className="h-4 w-4" /> Locate Us</a>
             <a href="#cta" onClick={() => setOpen(false)} className="btn-primary w-full mt-2">Request a Demo</a>
           </div>
         )}
@@ -233,7 +275,7 @@ function Building() {
               <div className="shrink-0 h-12 w-12 rounded-xl bg-grad-ocean grid place-items-center text-white"><Brain className="h-6 w-6" /></div>
               <div>
                 <h3 className="font-semibold text-lg">AI Layer Functionality</h3>
-                <p className="mt-1.5 text-muted-foreground">An Intelligent Clinical Decision Support Tool aligned with ICD-10 / DSM-5-TR, supporting CBT, Motivational Enhancement Therapy, and Contingency Management — not a standalone diagnostic system.</p>
+                <p className="mt-1.5 text-muted-foreground">An Intelligent Clinical Decision Support Tool aligned with ICD-11 / DSM-5-TR, supporting CBT, Motivational Enhancement Therapy, and Contingency Management — not a standalone diagnostic system.</p>
               </div>
             </div>
           </div>
@@ -700,22 +742,36 @@ function TeamIcon({ icon: Icon }: { icon: LucideIcon }) {
 }
 
 function Team() {
-  const leadership = [
+const leadership = [
   {
     name: "Agnelo Vijayan",
     role: "CEO",
     img: agneloImg,
+    bullets: [
+      "30+ years of multi-sector experience in healthcare innovation and global partnerships",
+      "Founding member, India Innovations Labs",
+      "Led an $85M health benefits program for the US Federal Government",
+    ],
   },
   {
     name: "Dr. Alvin Joseph",
     role: "Chief Medical Officer & Product Head",
     img: alvinImg,
+    bullets: [
+      "Specialist in psychiatry, mental health and addiction longitudinal research",
+      "Addiction & Mental Health Research Fellow at St. John's Medical College & Hospital",
+    ],
   },
   {
     name: "B. Vijayanand",
     role: "President & CIO",
     img: vijayImg,
-  }
+    bullets: [
+      "Senior Healthcare Technology executive with 25+ years of leadership",
+      "Expertise across enterprise IT, cyber security and digital transformation",
+      "Leading global CIO in Healthcare Solutions",
+    ],
+  },
 ];
   const product: { name: string; role: string; d: string; icon: LucideIcon }[] = [
     { name: "Manish Dash Sharma", role: "AI Lead", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
@@ -824,6 +880,159 @@ function Challenges() {
   );
 }
 
+
+/* ---------- Contact ---------- */
+const OFFICES = [
+  {
+    tag: "Headquarters",
+    city: "Bangalore, IN",
+    address: "F-15 Mana Placido, ECC Road, Whitefield, Bangalore 560066",
+    phone: "+91 80 0000 0000",
+    email: "hello@trust.health",
+    hours: "Mon – Fri · 9:30am – 6:30pm IST",
+  },
+  {
+    tag: "Research Lab",
+    city: "Hyderabad, IN",
+    address: "Plot 42, HITEC City, Madhapur, Hyderabad 500081",
+    phone: "+91 40 0000 0000",
+    email: "research@trust.health",
+    hours: "Mon – Sat · 10:00am – 7:00pm IST",
+  },
+];
+
+function mapsUrl(addr: string) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`;
+}
+function dirUrl(addr: string) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr)}`;
+}
+
+function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section id="contact" className="section bg-midnight text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,hsl(184_80%_38%/0.25),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(18_100%_60%/0.22),transparent_55%)]" />
+      <div className="container-trust relative">
+        <div className="max-w-3xl reveal">
+          <div className="pill bg-white/10 border border-white/15 text-white"><Navigation className="h-3.5 w-3.5" /> Find &amp; Reach Us</div>
+          <h2 className="mt-5 text-4xl md:text-5xl font-semibold leading-tight">
+            Two labs. One mission — <span className="font-serif italic text-sunset">closer than you think</span>.
+          </h2>
+          <p className="mt-5 text-white/70 text-lg">Drop by, send a note, or open directions in one tap. We respond within one working day.</p>
+        </div>
+
+        <div className="mt-14 grid lg:grid-cols-5 gap-6">
+          {/* Office cards */}
+          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
+            {OFFICES.map((o, i) => (
+              <div key={o.address} className="reveal glass-dark rounded-2xl p-6 flex flex-col group hover:border-sunset/40 transition-all" style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-sunset font-semibold">{o.tag}</span>
+                  <div className="h-9 w-9 rounded-full bg-grad-ocean grid place-items-center">
+                    <MapPin className="h-4 w-4 text-white" />
+                  </div>
+                </div>
+                <div className="mt-5 text-xl font-semibold">{o.city}</div>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">{o.address}</p>
+
+                <div className="mt-5 space-y-2 text-sm text-white/70">
+                  <div className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-teal" /> {o.phone}</div>
+                  <div className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-teal" /> {o.email}</div>
+                  <div className="flex items-center gap-2.5"><Clock className="h-4 w-4 text-teal" /> {o.hours}</div>
+                </div>
+
+                {/* Mini map preview */}
+                <a
+                  href={mapsUrl(o.address)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 block rounded-xl overflow-hidden border border-white/10 aspect-[16/9] bg-black/40 relative"
+                  aria-label={`Open ${o.city} on Google Maps`}
+                >
+                  <iframe
+                    title={`Map of ${o.city}`}
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(o.address)}&output=embed`}
+                    className="absolute inset-0 w-full h-full grayscale-[40%] group-hover:grayscale-0 transition-all pointer-events-none"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </a>
+
+                <div className="mt-5 flex gap-2">
+                  <a href={dirUrl(o.address)} target="_blank" rel="noreferrer" className="btn-primary flex-1 !py-2.5 !text-xs justify-center">
+                    <Navigation className="h-4 w-4" /> Directions
+                  </a>
+                  <a href={mapsUrl(o.address)} target="_blank" rel="noreferrer" className="btn-ghost !py-2.5 !text-xs !text-white !border-white/20 hover:!text-sunset hover:!border-sunset justify-center">
+                    View Map
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Contact form */}
+          <div className="lg:col-span-2 reveal">
+            <div className="glass-dark rounded-2xl p-6 lg:p-7 h-full flex flex-col">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-grad-sunset grid place-items-center"><Send className="h-5 w-5 text-white" /></div>
+                <div>
+                  <div className="text-lg font-semibold">Send a message</div>
+                  <div className="text-xs text-white/60">Pilots · partnerships · press</div>
+                </div>
+              </div>
+
+              {sent ? (
+                <div className="mt-8 rounded-xl border border-teal/30 bg-teal/10 p-6 text-center">
+                  <div className="h-12 w-12 mx-auto rounded-full bg-grad-ocean grid place-items-center"><Sparkles className="h-6 w-6 text-white" /></div>
+                  <div className="mt-4 font-semibold">Message received</div>
+                  <p className="mt-1.5 text-sm text-white/70">We'll get back to you within one working day.</p>
+                  <button onClick={() => { setSent(false); setForm({ name: "", email: "", org: "", message: "" }); }} className="mt-5 text-xs uppercase tracking-widest text-sunset hover:text-white transition-colors">Send another</button>
+                </div>
+              ) : (
+                <form
+                  className="mt-6 space-y-4 flex-1 flex flex-col"
+                  onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                >
+                  <div className="grid grid-cols-2 gap-3">
+                    <input
+                      required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      placeholder="Full name"
+                      className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-sunset/60 focus:bg-white/10 transition-all"
+                    />
+                    <input
+                      value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })}
+                      placeholder="Organisation"
+                      className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-sunset/60 focus:bg-white/10 transition-all"
+                    />
+                  </div>
+                  <input
+                    required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="Work email"
+                    className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-sunset/60 focus:bg-white/10 transition-all"
+                  />
+                  <textarea
+                    required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    placeholder="Tell us a little about what you're exploring…"
+                    className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-sunset/60 focus:bg-white/10 transition-all resize-none flex-1"
+                  />
+                  <button type="submit" className="btn-primary justify-center">
+                    Send Message <Send className="h-4 w-4" />
+                  </button>
+                  <p className="text-[11px] text-white/50 text-center">By submitting, you agree to be contacted by the TRUST team about your enquiry.</p>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 /* ---------- CTA + Footer ---------- */
 function CTA() {
   return (
@@ -864,6 +1073,7 @@ function Footer() {
 /* ---------- Page ---------- */
 export default function Index() {
   useReveal();
+
   return (
     <main id="main-content" className="min-h-screen">
       <Nav />
@@ -884,6 +1094,7 @@ export default function Index() {
       <Team />
       <Challenges />
       <CTA />
+      <Contact />
       <Footer />
     </main>
   );
