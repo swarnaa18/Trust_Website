@@ -424,21 +424,7 @@ function Platform() {
           </div>
         </div>
 
-        {/* Tech bullets */}
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {[
-            { icon: Smartphone, t: "Frontend", b: "Native iOS & Android (React Native / Flutter) + responsive Web Portal for clinicians." },
-            { icon: Cpu, t: "Intelligence Layer", b: "Microservices on Node.js (NestJS) & Python (FastAPI), with Kafka for real-time processing." },
-            { icon: Database, t: "Data & Security", b: "PostgreSQL relational, MongoDB unstructured, HIPAA-encrypted storage." },
-            { icon: Globe2, t: "Infrastructure", b: "Global AWS cloud, Kubernetes (EKS) auto-scaling, geo-redundant hosting." },
-          ].map((x) => (
-            <div key={x.t} className="reveal trust-card">
-              <x.icon className="h-6 w-6 text-teal" />
-              <h4 className="mt-4 font-semibold">{x.t}</h4>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{x.b}</p>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );
@@ -884,13 +870,13 @@ function Challenges() {
 /* ---------- Contact ---------- */
 const OFFICES = [
   {
-    tag: "Headquarters",
+    tag: "Trust Office",
     city: "Bangalore, IN",
     address: "F-15 Mana Placido, ECC Road, Whitefield, Bangalore 560066",
     
   },
   {
-    tag: "Research Lab",
+    tag: "Trust Office",
     city: "Chennai, IN",
     address: "No. 2, Kumarasamy St, Lakshmipuram, Chromepet, Chennai, Tamil Nadu 600044",
     
@@ -934,11 +920,6 @@ function Contact() {
                 <div className="mt-5 text-xl font-semibold">{o.city}</div>
                 <p className="mt-2 text-sm text-white/70 leading-relaxed">{o.address}</p>
 
-                <div className="mt-5 space-y-2 text-sm text-white/70">
-                  <div className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-teal" /> {o.phone}</div>
-                  <div className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-teal" /> {o.email}</div>
-                  <div className="flex items-center gap-2.5"><Clock className="h-4 w-4 text-teal" /> {o.hours}</div>
-                </div>
 
                 {/* Mini map preview */}
                 <a
