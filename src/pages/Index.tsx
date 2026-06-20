@@ -891,8 +891,8 @@ const OFFICES = [
   },
   {
     tag: "Research Lab",
-    city: "Hyderabad, IN",
-    address: "Plot 42, HITEC City, Madhapur, Hyderabad 500081",
+    city: "Chennai, IN",
+    address: "No. 2, Kumarasamy St, Lakshmipuram, Chromepet, Chennai, Tamil Nadu 600044",
     
   },
 ];
