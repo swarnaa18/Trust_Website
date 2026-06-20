@@ -763,11 +763,13 @@ const leadership = [
     { name: "Manish Dash Sharma", role: "AI Lead", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
     { name: "Arnav Jain", role: "Wearables & Cognitive Speech Lead", icon: Database, d: "Deep-tech wearables and cognitive speech systems development." },
     { name: "Raghav Kaushik", role: "Frontend Architecture", icon: MousePointer2, d: "Leads frontend architecture using React, Next.js, and TypeScript for scalable UI systems." },
+    { name: "Denzil Haniel", role: "abc", icon: MousePointer2, d: "Leads frontend architecture using React, Next.js, and TypeScript for scalable UI systems." },
+
   ];
   const ops: { name: string; role: string; d: string; icon: LucideIcon }[] = [
     { name: "Sunny Yadav", role: "AI/ML Specialist", icon: Network, d: "Developer focusing on the Relapse Prediction model for real-world deployment." },
     { name: "Swarnaa R.", role: "AI / Technical Researcher", icon: Network, d: "Full-stack developer focused on secure and ethical AI workflows." },
-    { name: "Balraj Kapini", role: "Content & Marketing", icon: Pill, d: "30+ years in Communication, Marketing and Media." },
+    { name: "Balraj Kapini",   role: "Content & Marketing", icon: Pill, d: "30+ years in Communication, Marketing and Media." },
     { name: "Shakshitha S.", role: "HR Lead", icon: Users, d: "Specialist in applying behavioral science to build people systems." },
   ];
 
@@ -802,20 +804,25 @@ const leadership = [
         {/* Product, Engineering & Technology Ops */}
         <div className="mt-16 reveal">
           <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Product · Engineering · Technology Ops</div>
-          <div className="mt-6 grid md:grid-cols-3 gap-5">
-            {product.map((p) => (
-              <div key={p.name} className="trust-card">
-                <div className="flex items-center gap-4">
-                  <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border"><TeamIcon icon={p.icon} /></div>
-                  <div>
-                    <h4 className="font-semibold">{p.name}</h4>
-                    <div className="text-xs uppercase tracking-widest text-teal">{p.role}</div>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
-              </div>
-            ))}
-          </div>
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  {product.map((p) => (
+    <div key={p.name} className="trust-card">
+      <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border">
+        <TeamIcon icon={p.icon} />
+      </div>
+
+      <h4 className="mt-4 font-semibold">{p.name}</h4>
+
+      <div className="text-xs uppercase tracking-widest text-teal mt-1">
+        {p.role}
+      </div>
+
+      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+        {p.d}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
 
         {/* AI Innovation & Organizational Excellence */}
