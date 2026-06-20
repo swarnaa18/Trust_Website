@@ -887,17 +887,13 @@ const OFFICES = [
     tag: "Headquarters",
     city: "Bangalore, IN",
     address: "F-15 Mana Placido, ECC Road, Whitefield, Bangalore 560066",
-    phone: "+91 80 0000 0000",
-    email: "hello@trust.health",
-    hours: "Mon – Fri · 9:30am – 6:30pm IST",
+    
   },
   {
     tag: "Research Lab",
     city: "Hyderabad, IN",
     address: "Plot 42, HITEC City, Madhapur, Hyderabad 500081",
-    phone: "+91 40 0000 0000",
-    email: "research@trust.health",
-    hours: "Mon – Sat · 10:00am – 7:00pm IST",
+    
   },
 ];
 
