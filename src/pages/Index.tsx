@@ -6,6 +6,7 @@ import brainVault from "@/assets/trust/brain-vault.jpg";
 import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
+import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import {
   Activity,
@@ -1062,6 +1063,15 @@ export default function Index() {
     <main id="main-content" className="min-h-screen">
       <Nav />
       <Hero />
+      <section className="py-8 bg-background">
+  <div className="container-trust">
+    <img
+      src={trustBanner}
+      alt="Trust Quote Banner"
+      className="w-full rounded-2xl shadow-lg"
+    />
+  </div>
+</section>
       <Agenda />
       <Crisis />
       <Building />
