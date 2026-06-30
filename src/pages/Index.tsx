@@ -761,10 +761,10 @@ const leadership = [
   },
 ];
   const product: { name: string; role: string; d: string; icon: LucideIcon }[] = [
+    { name: "Denzil Haniel", role: "Director AI/ML & Data Science", icon: Users, d: "AI Specialist with a focus on digital marketing and marketing strategies.Leads techno-commercial engagements and drives growth initiatives, partnerships and market outreach " },
     { name: "Manish Dash Sharma", role: "AI Lead", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
     { name: "Arnav Jain", role: "Wearables & Cognitive Speech Lead", icon: Database, d: "Deep-tech wearables and cognitive speech systems development." },
     { name: "Raghav Kaushik", role: "Frontend Architecture", icon: MousePointer2, d: "Leads frontend architecture using React, Next.js, and TypeScript for scalable UI systems." },
-    { name: "Denzil Haniel", role: "Director AI/ML & Data Science", icon: Users, d: "AI Specialist with a focus on digital marketing and marketing strategies.Leads techno-commercial engagements and drives growth initiatives, partnerships and market outreach " },
 
   ];
   const ops: { name: string; role: string; d: string; icon: LucideIcon }[] = [
