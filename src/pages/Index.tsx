@@ -8,6 +8,7 @@ import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
 import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
+import incubationsImg from "@/assets/trust/incubation.png";
 import {
   Activity,
   AlertTriangle,
@@ -73,6 +74,7 @@ const NAV = [
   { label: "Platform", href: "#platform" },
   { label: "Wearable", href: "#wearable" },
   { label: "Technology", href: "#tech" },
+    { label: "Incubations & Partnerships", href: "#partnerships" },
   { label: "Team", href: "#team" },
 ];
 
@@ -719,6 +721,49 @@ function TechArch() {
   );
 }
 
+/* ---------- Incubations & Partnerships ---------- */
+
+function Partnerships() {
+  return (
+    <section id="partnerships" className="section bg-background">
+      <div className="container-trust">
+
+        <div className="max-w-3xl reveal mx-auto text-center">
+          <div className="eyebrow">
+            <Building2 className="h-3.5 w-3.5" />
+            Incubations & Partnerships
+          </div>
+
+          <h2 className="mt-5 text-4xl md:text-5xl font-semibold">
+            Incubations &
+            <span className="font-serif italic text-sunset">
+              {" "}Partnerships
+            </span>
+          </h2>
+
+          <p className="mt-4 text-lg text-muted-foreground">
+            TRUST collaborates with leading academic institutions,
+            healthcare organizations, innovation labs and strategic
+            partners to build the future of AI-powered digital therapeutics.
+          </p>
+        </div>
+
+        <div className="reveal mt-14 rounded-3xl overflow-hidden border border-border shadow-xl bg-white p-6">
+
+          <img
+            src={incubationsImg}
+            alt="Incubations and Partnerships"
+            className="w-full h-auto object-contain"
+          />
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
 /* ---------- Team ---------- */
 function TeamIcon({ icon: Icon }: { icon: LucideIcon }) {
   return (
@@ -1085,6 +1130,7 @@ export default function Index() {
       <Business />
       <Roadmap />
       <TechArch />
+      <Partnerships />
       <Team />
       <Challenges />
       <CTA />
