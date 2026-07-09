@@ -762,10 +762,10 @@ const leadership = [
 ];
   const product: { name: string; role: string; d: string; icon: LucideIcon }[] = [
     { name: "Denzil Haniel", role: "Director AI/ML & Data Science", icon: Users, d: "AI Specialist with a focus on digital marketing and marketing strategies.Leads techno-commercial engagements and drives growth initiatives, partnerships and market outreach " },
-    { name: "Manish Dash Sharma", role: "AI Lead", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
+    { name: "Manish Dash Sharma", role: "CTO", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
     { name: "Arnav Jain", role: "Wearables & Cognitive Speech Lead", icon: Database, d: "Deep-tech wearables and cognitive speech systems development." },
+    { name: "Thomas/S(Tommy)", role: "Independent Consultant – Americas", icon: Users, d: "A health‑tech innovator and Chief Consultant (Americas) for the AVJ Group and the TRUST Incubator. Armed with a bachelor’s degree in computer science & engineering, he has engineered transformative platforms such as a $110M self‑pay platform with Horizon Blue Cross / Blue Shield serving 15,000 members in 2018 and a $45M Federal flex‑card program with CarePlus/Humana serving over 90,000 members with the AVJ group. Tommy is currently advancing his credentials with CADC and CPE certifications in the USA" },
     { name: "Raghav Kaushik", role: "Frontend Architecture", icon: MousePointer2, d: "Leads frontend architecture using React, Next.js, and TypeScript for scalable UI systems." },
-
   ];
   const ops: { name: string; role: string; d: string; icon: LucideIcon }[] = [
     { name: "Sunny Yadav", role: "AI/ML Specialist", icon: Network, d: "Developer focusing on the Relapse Prediction model for real-world deployment." },
