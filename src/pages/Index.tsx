@@ -777,47 +777,102 @@ function Team() {
 const leadership = [
   {
     name: "Agnelo Vijayan",
-    role: "CEO",
+    role: "Chief Executive Officer (CEO)",
     img: agneloImg,
     bullets: [
-      "30+ years of multi-sector experience in healthcare innovation and global partnerships",
-      "Founding member, India Innovations Labs",
-      "Led an $85M health benefits program for the US Federal Government",
-    ],
+      "Leads Trust AI's vision, strategy, fundraising, partnerships, and commercialization, driving the development of evidence-based AI solutions that transform mental healthcare and addiction treatment."
+    ]
   },
   {
     name: "Dr. Alvin Joseph",
-    role: "Chief Medical Officer & Product Head",
+    role: "Chief Medical Officer (CMO)",
     img: alvinImg,
     bullets: [
-      "Specialist in psychiatry, mental health and addiction longitudinal research",
-      "Addiction & Mental Health Research Fellow at St. John's Medical College & Hospital",
-    ],
+      "Consultant Psychiatrist and clinical lead behind Trust AI's research and medical innovation. Oversees clinical validation, evidence generation, treatment protocols, and healthcare partnerships."
+    ]
   },
   {
     name: "B. Vijayanand",
-    role: "President & CIO",
+    role: "Chief Information Officer (CIO)",
     img: vijayImg,
     bullets: [
-      "Senior Healthcare Technology executive with 25+ years of leadership",
-      "Expertise across enterprise IT, cyber security and digital transformation",
-      "Leading global CIO in Healthcare Solutions",
-    ],
-  },
+      "Leads technology strategy, enterprise infrastructure, cybersecurity, and digital transformation, ensuring a secure, scalable, and reliable AI platform."
+    ]
+  }
 ];
-  const product: { name: string; role: string; d: string; icon: LucideIcon }[] = [
-    { name: "Denzil Haniel", role: "Director AI/ML & Data Science", icon: Users, d: "AI Specialist with a focus on digital marketing and marketing strategies.Leads techno-commercial engagements and drives growth initiatives, partnerships and market outreach " },
-    { name: "Manish Dash Sharma", role: "CTO", icon: Bot, d: "Specialist in scalable cloud architectures and AI-driven systems. Expert in Mental Health Chatbot innovation." },
-    { name: "Arnav Jain", role: "Wearables & Cognitive Speech Lead", icon: Database, d: "Deep-tech wearables and cognitive speech systems development." },
-    { name: "Thomas/S(Tommy)", role: "Chief Consultant – Americas", icon: Users, d: "A health‑tech innovator and Chief Consultant (Americas) for the AVJ Group and the TRUST Incubator. Armed with a bachelor’s degree in computer science & engineering, he has engineered transformative platforms such as a $110M self‑pay platform with Horizon Blue Cross / Blue Shield serving 15,000 members in 2018 and a $45M Federal flex‑card program with CarePlus/Humana serving over 90,000 members with the AVJ group. Tommy is currently advancing his credentials with CADC and CPE certifications in the USA" },
-    { name: "Raghav Kaushik", role: "Frontend Architecture", icon: MousePointer2, d: "Leads frontend architecture using React, Next.js, and TypeScript for scalable UI systems." },
-  ];
-  const ops: { name: string; role: string; d: string; icon: LucideIcon }[] = [
-    { name: "Sunny Yadav", role: "AI/ML Specialist", icon: Network, d: "Developer focusing on the Relapse Prediction model for real-world deployment." },
-    { name: "Swarnaa R.", role: "AI / Technical Researcher", icon: Network, d: "Full-stack developer focused on secure and ethical AI workflows." },
-    { name: "Balraj Kapini",   role: "Content & Marketing", icon: Pill, d: "30+ years in Communication, Marketing and Media." },
-    { name: "Shakshitha S.", role: "HR Lead", icon: Users, d: "Specialist in applying behavioral science to build people systems." },
-  ];
+const executiveLeadership = [
+  {
+    name:"Subidita Chakraborty",
+    role:"Senior Vice President – Partnerships & Alliances",
+    icon:Users,
+    d:"Builds strategic partnerships across healthcare, corporates, governments, research institutions, and global ecosystems to accelerate adoption and strategic growth."
+  },
+  {
+    name:"Manish Dash Sharma",
+    role:"Chief Technology Officer (CTO)",
+    icon:Bot,
+    d:"Leads AI product engineering, platform architecture, and technology innovation, transforming cutting-edge research into scalable, production-ready healthcare solutions."
+  },
+  {
+    name:"Balraj Kapini",
+    role:"Chief Communications Officer (CCO)",
+    icon:Pill,
+    d:"Leads corporate communications, brand strategy, multilingual content, public relations, and stakeholder engagement across healthcare, government, and enterprise initiatives."
+  },
+  {
+    name:"Thomas 'Tommy' S.",
+    role:"Chief Consultant – Americas",
+    icon:Users,
+    d:"Provides strategic leadership for Trust AI's expansion across the Americas, fostering partnerships, market development, and international collaborations."
+  },
+  {
+    name:"Arnav Jain",
+    role:"Head – Wearables",
+    icon:Database,
+    d:"Leads the development and integration of next-generation wearable technologies that enable continuous monitoring, safety, and AI-powered digital therapeutics."
+  } 
+];
+const aiEngineering = [
+  {
+    name:"Abhishek Kumar",
+    role:"AI Tech Lead",
+    icon:Network,
+    d:"Leads AI application development, intelligent automation, and deployment of machine learning solutions across Trust AI's clinical platform."
+  },
+  {
+    name:"Vishnu Priyan",
+    role:"AI Developer",
+    icon:Network,
+    d:"Develops AI-powered applications, machine learning workflows, backend services, and intelligent healthcare solutions supporting personalization and predictive care."
+  },
+  {
+    name:"Swarnaa Ramesh",
+    role:"Developer",
+    icon:Network,
+    d:"Contributes to full-stack development, AI integrations, clinical content delivery, and digital therapeutics workflows across the Trust AI platform."
+  }
+];
+
+const operations = [
+  {
+    name:"Vinodhini Shailender",
+    role:"Compliance Officer",
+    icon:ShieldCheck,
+    d:"Oversees regulatory compliance, governance, quality systems, documentation, and organizational policies, ensuring adherence to healthcare and data protection standards."
+  },
+  {
+    name:"Anamitra Acharya",
+    role:"Head – Management Services",
+    icon:Users,
+    d:"Supports business operations, administration, strategic coordination, and organizational services to ensure efficient execution across the organization."
+  },
+  {
+    name:"Denzil Haniel",
+    role:"Principal – Human Resources Management",
+    icon:Users,
+    d:"Drives strategic digital initiatives, employee engagement, and organizational development to support Trust AI's."
+  }
+];
 
   return (
     <section id="team" className="section">
@@ -849,9 +904,9 @@ const leadership = [
 
         {/* Product, Engineering & Technology Ops */}
         <div className="mt-16 reveal">
-          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Product · Engineering · Technology Ops</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Executive Leadership</div>
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-  {product.map((p) => (
+  {executiveLeadership.map((p) => (
     <div key={p.name} className="trust-card">
       <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border">
         <TeamIcon icon={p.icon} />
@@ -871,25 +926,63 @@ const leadership = [
 </div>
         </div>
 
-        {/* AI Innovation & Organizational Excellence */}
-        <div className="mt-12 reveal">
-          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">AI Innovation · Organizational Excellence</div>
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {ops.map((p) => (
-              <div key={p.name} className="trust-card">
-                <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border"><TeamIcon icon={p.icon} /></div>
-                <h4 className="mt-4 font-semibold">{p.name}</h4>
-                <div className="text-xs uppercase tracking-widest text-teal mt-1">{p.role}</div>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
-              </div>
-            ))}
-          </div>
+      {/* AI & Product Engineering */}
+<div className="mt-12 reveal">
+  <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+    AI & Product Engineering
+  </div>
+
+  <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {aiEngineering.map((p) => (
+      <div key={p.name} className="trust-card">
+        <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border">
+          <TeamIcon icon={p.icon} />
         </div>
+
+        <h4 className="mt-4 font-semibold">{p.name}</h4>
+
+        <div className="text-xs uppercase tracking-widest text-teal mt-1">
+          {p.role}
+        </div>
+
+        <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+          {p.d}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+{/* Operations & Governance */}
+<div className="mt-12 reveal">
+  <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+    Operations & Governance
+  </div>
+
+  <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {operations.map((p) => (
+      <div key={p.name} className="trust-card">
+        <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-border">
+          <TeamIcon icon={p.icon} />
+        </div>
+
+        <h4 className="mt-4 font-semibold">{p.name}</h4>
+
+        <div className="text-xs uppercase tracking-widest text-teal mt-1">
+          {p.role}
+        </div>
+
+        <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+          {p.d}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
     </section>
   );
 }
-
 /* ---------- Challenges ---------- */
 function Challenges() {
   const items = [
