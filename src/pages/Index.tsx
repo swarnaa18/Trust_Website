@@ -892,11 +892,13 @@ const operations = [
               <div className="p-6 lg:p-7">
                 <h3 className="text-xl font-semibold">{p.name}</h3>
                 <div className="text-sm uppercase tracking-widest text-teal mt-1">{p.role}</div>
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  {(p.bullets ?? []).map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-sunset mt-1">•</span>{b}</li>
-                  ))}
-                </ul>
+                <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+  {(p.bullets ?? []).map((b) => (
+    <p key={b} className="leading-relaxed">
+      {b}
+    </p>
+  ))}
+</div>
               </div>
             </div>
           ))}
