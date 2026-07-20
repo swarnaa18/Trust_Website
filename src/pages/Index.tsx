@@ -1017,6 +1017,11 @@ function Challenges() {
 
 /* ---------- Contact ---------- */
 const OFFICES = [
+   {
+    tag: "Trust Office",
+    city: "Coppell, TX, USA",
+    address: "529 Abbey Ct, Coppell, TX 75019, USA",
+  },
   {
     tag: "Trust Office",
     city: "Bangalore, IN",
@@ -1054,9 +1059,9 @@ function Contact() {
           <p className="mt-5 text-white/70 text-lg">Drop by, send a note, or open directions in one tap. We respond within one working day.</p>
         </div>
 
-        <div className="mt-14 grid lg:grid-cols-5 gap-6">
-          {/* Office cards */}
-          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-5">
+<div className="mt-14 space-y-8">
+            {/* Office cards */}
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {OFFICES.map((o, i) => (
               <div key={o.address} className="reveal glass-dark rounded-2xl p-6 flex flex-col group hover:border-sunset/40 transition-all" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="flex items-center justify-between">
@@ -1099,9 +1104,9 @@ function Contact() {
           </div>
 
           {/* Contact form */}
-          <div className="lg:col-span-2 reveal">
-            <div className="glass-dark rounded-2xl p-6 lg:p-7 h-full flex flex-col">
-              <div className="flex items-center gap-3">
+          <div className="reveal">
+<div className="glass-dark rounded-2xl p-6 lg:p-8 max-w-5xl mx-auto flex flex-col">
+                <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-xl bg-grad-sunset grid place-items-center"><Send className="h-5 w-5 text-white" /></div>
                 <div>
                   <div className="text-lg font-semibold">Send a message</div>
