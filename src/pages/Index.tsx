@@ -1278,13 +1278,13 @@ function Team() {
       icon: Users,
       d: "Builds strategic partnerships across healthcare, corporates, governments, research institutions, and global ecosystems to accelerate adoption and strategic growth.",
     },
-    {
-      name: "Manish Dash Sharma",
-      role: "Chief Technology Officer (CTO)",
-      // img: Manish,
-      icon: Bot,
-      d: "Leads AI product engineering, platform architecture, and technology innovation, transforming cutting-edge research into scalable, production-ready healthcare solutions.",
-    },
+    // {
+    //   name: "Manish Dash Sharma",
+    //   role: "Chief Technology Officer (CTO)",
+    //   // img: Manish,
+    //   icon: Bot,
+    //   d: "Leads AI product engineering, platform architecture, and technology innovation, transforming cutting-edge research into scalable, production-ready healthcare solutions.",
+    // },
     {
       name: "Balraj Kapini",
       role: "Chief Communications Officer (CCO)",
