@@ -15,6 +15,8 @@ import Thomas from "@/assets/trust/Thomas.png";
 import Subidita from "@/assets/trust/Subidita.jpg";
 import Manish from "@/assets/trust/Manish.jpg";
 import Balraj from "@/assets/trust/Balraj.jpeg";
+import awardsImg from "@/assets/trust/award1.png";
+import awardsImg2 from "@/assets/trust/award2.png";
 import {
   Activity,
   AlertTriangle,
@@ -84,6 +86,7 @@ const NAV = [
   { label: "Wearable", href: "#wearable" },
   { label: "Technology", href: "#tech" },
   { label: "Incubations & Partnerships", href: "#partnerships" },
+  { label: "Awards", href: "#awards" },
   { label: "Team", href: "#team" },
 ];
 
@@ -1226,6 +1229,97 @@ function Partnerships() {
   );
 }
 
+function Awards() {
+  return (
+    <section id="awards" className="section bg-secondary/40">
+      <div className="container-trust">
+
+        <div className="max-w-3xl mx-auto text-center reveal">
+
+          <div className="eyebrow">
+            <Award className="h-3.5 w-3.5" />
+            Awards & Recognition
+          </div>
+
+          <h2 className="mt-5 text-4xl md:text-5xl font-semibold">
+            Recognized for
+            <span className="font-serif italic text-sunset">
+              {" "}Innovation & Excellence
+            </span>
+          </h2>
+
+          <p className="mt-5 text-lg text-muted-foreground">
+            TRUST DTx continues to gain national recognition for its
+            contributions to Digital Therapeutics, Artificial Intelligence,
+            Healthcare Innovation and Enterprise Digital Transformation.
+          </p>
+
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-10 mt-16">
+
+          {/* Award 1 */}
+
+          <div className="trust-card overflow-hidden reveal">
+
+            <img
+              src={awardsImg}
+              alt="CIO Tech Leadership Excellence Awards 2026"
+              className="w-full object-cover rounded-t-2xl"
+            />
+
+            <div className="p-8">
+
+              <h3 className="text-2xl font-semibold">
+                CIO Tech Leadership Excellence Awards 2026
+              </h3>
+
+              <p className="mt-4 text-muted-foreground leading-8">
+                Vijay Anand, Co-founder & CIO of TRUST DTx,
+                received the
+                <strong> CIO of the Year – Enterprise Transformation </strong>
+                award for driving innovation in AI-powered Digital
+                Therapeutics and healthcare transformation.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Award 2 */}
+
+          <div className="trust-card overflow-hidden reveal">
+
+            <img
+              src={awardsImg2}
+              alt="CIO Accelerator X Awards 2026"
+              className="w-full object-cover rounded-t-2xl"
+            />
+
+            <div className="p-8">
+
+              <h3 className="text-2xl font-semibold">
+                CIO Accelerator X Awards 2026
+              </h3>
+
+              <p className="mt-4 text-muted-foreground leading-8">
+                Vijay Anand, CIO of TRUST DTx,
+                was honoured at the
+                <strong> CIO Accelerator X Awards 2026 </strong>
+                for outstanding leadership in Healthcare Technology,
+                Artificial Intelligence and Digital Innovation.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
 /* ---------- Team ---------- */
 function TeamIcon({ icon: Icon }: { icon: LucideIcon }) {
   return (
@@ -1854,6 +1948,7 @@ export default function Index() {
       <Roadmap />
       <TechArch />
       <Partnerships />
+      <Awards />
       <Team />
       <Challenges />
       <CTA />
