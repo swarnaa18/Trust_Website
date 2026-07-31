@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Mail } from "lucide-react";
 import logo from "@/assets/trust/trust-logo.png";
 import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
@@ -37,6 +36,7 @@ import {
   HeartPulse,
   Layers,
   Lock,
+  Mail,
   MapPin,
   Menu,
   Mic,
