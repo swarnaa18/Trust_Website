@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Mail } from "lucide-react";
 import logo from "@/assets/trust/trust-logo.png";
 import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
@@ -36,10 +37,12 @@ import {
   HeartPulse,
   Layers,
   Lock,
-  Mail,
   MapPin,
   Menu,
   Mic,
+  Handshake,
+  Presentation,
+  LifeBuoy,
   MousePointer2,
   Navigation,
   Network,
@@ -1750,6 +1753,94 @@ function Contact() {
               </div>
             ))}
           </div>
+
+{/* Contact Information */}
+
+<section className="mt-14">
+  <div className="trust-card p-10 reveal">
+
+    <div className="max-w-4xl mx-auto text-center">
+
+      <h2 className="text-4xl font-semibold">
+        Contact Us
+      </h2>
+
+      <p className="mt-5 text-lg text-muted-foreground leading-8">
+        For inquiries, partnerships, product demonstrations, or technical
+        support, our team is here to help.
+      </p>
+
+      <div className="mt-10">
+
+        <div className="inline-flex items-center gap-3 rounded-full border border-border px-6 py-4 bg-card shadow">
+
+          <Mail className="h-6 w-6 text-sunset" />
+
+          <a
+            href="mailto:agnelo@trustdtx.ai"
+            className="text-xl font-semibold text-sunset hover:underline"
+          >
+            agnelo@trustdtx.ai
+          </a>
+
+        </div>
+
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8 mt-12">
+
+        <div>
+
+          <Handshake className="mx-auto h-10 w-10 text-sunset" />
+
+          <h3 className="mt-4 text-xl font-semibold">
+            Partnerships
+          </h3>
+
+          <p className="mt-3 text-muted-foreground">
+            Collaborate with TRUST to advance AI-powered Digital Therapeutics
+            and healthcare innovation.
+          </p>
+
+        </div>
+
+        <div>
+
+          <Presentation className="mx-auto h-10 w-10 text-sunset" />
+
+          <h3 className="mt-4 text-xl font-semibold">
+            Product Demo
+          </h3>
+
+          <p className="mt-3 text-muted-foreground">
+            Schedule a live demonstration of the TRUST platform and wearable
+            ecosystem.
+          </p>
+
+        </div>
+
+        <div>
+
+          <LifeBuoy className="mx-auto h-10 w-10 text-sunset" />
+
+          <h3 className="mt-4 text-xl font-semibold">
+            Support
+          </h3>
+
+          <p className="mt-3 text-muted-foreground">
+            Reach out for implementation assistance, onboarding and technical
+            support.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
           {/* Contact form */}
           <div className="reveal">
