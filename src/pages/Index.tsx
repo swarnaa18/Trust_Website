@@ -42,8 +42,8 @@ import {
   Mic,
   Handshake,
   Presentation,
-  LifeBuoy,
-  MousePointer2,
+  // LifeBuoy,
+  // MousePointer2,
   Navigation,
   Network,
   Phone,
@@ -1766,8 +1766,7 @@ function Contact() {
       </h2>
 
       <p className="mt-5 text-lg text-muted-foreground leading-8">
-        For inquiries, partnerships, product demonstrations, or technical
-        support, our team is here to help.
+        For inquiries, partnerships, product demonstrations our team is here to help.
       </p>
 
       <div className="mt-10">
@@ -1787,7 +1786,7 @@ function Contact() {
 
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 max-w-3xl mx-auto">
 
         <div>
 
@@ -1819,7 +1818,7 @@ function Contact() {
 
         </div>
 
-        <div>
+        {/* <div>
 
           <LifeBuoy className="mx-auto h-10 w-10 text-sunset" />
 
@@ -1832,7 +1831,7 @@ function Contact() {
             support.
           </p>
 
-        </div>
+        </div> */}
 
       </div>
 
