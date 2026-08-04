@@ -17,6 +17,7 @@ import Manish from "@/assets/trust/Manish.jpg";
 import Balraj from "@/assets/trust/Balraj.jpeg";
 import awardsImg from "@/assets/trust/award1.png";
 import awardsImg2 from "@/assets/trust/award2.png";
+import awardsImg3 from "@/assets/trust/award3.jpeg"
 import {
   Activity,
   AlertTriangle,
@@ -1259,7 +1260,7 @@ function Awards() {
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 mt-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-16">
 
           {/* Award 1 */}
 
@@ -1316,6 +1317,32 @@ function Awards() {
             </div>
 
           </div>
+
+          {/* Award 3 */}
+
+<div className="trust-card overflow-hidden reveal">
+
+  <img
+    src={awardsImg3}
+    alt="AIWoW Governing Board Appointment"
+    className="w-full object-cover rounded-t-2xl"
+  />
+
+  <div className="p-6">
+
+  <h3 className="text-xl font-semibold">
+    AIWoW Governing Board Leadership
+  </h3>
+
+  <p className="mt-3 text-muted-foreground text-sm leading-6">
+    Vijay Anand, Co-founder & CIO of TRUST DTx, has been appointed to the
+    <strong> AIWoW™ Governing Board</strong>, recognizing his leadership in
+    AI, digital transformation, cybersecurity, and responsible innovation.
+  </p>
+
+</div>
+
+</div>
 
         </div>
 
