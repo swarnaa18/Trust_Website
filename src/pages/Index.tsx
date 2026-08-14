@@ -855,8 +855,6 @@ function Wearable() {
         <div className="reveal mt-14 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
           <video
             src={wearableVideo}
-            autoPlay
-            loop
             playsInline
             controls
             preload="auto"
