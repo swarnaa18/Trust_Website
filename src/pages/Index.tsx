@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/trust/trust-logo.png";
 import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
+import elderCareVideo from "@/assets/trust/elder-care.mp4";
+import enterpriseVideo from "@/assets/trust/enterprise.mp4";
 import brainVault from "@/assets/trust/brain-vault.jpg";
 // import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
@@ -86,6 +88,7 @@ function useReveal() {
 
 const NAV = [
   { label: "Crisis", href: "#crisis" },
+    { label: "Enterprise", href: "#enterprise" },
   { label: "Platform", href: "#platform" },
   { label: "Wearable", href: "#wearable" },
   { label: "Technology", href: "#tech" },
@@ -643,6 +646,59 @@ function Outcomes() {
   );
 }
 
+/* ---------- Enterprise ---------- */
+function Enterprise() {
+  return (
+    <section
+      id="enterprise"
+      className="section bg-background relative overflow-hidden"
+    >
+      {/* Background effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.10),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.10),transparent_50%)]" />
+
+      <div className="container-trust relative">
+
+        {/* Heading */}
+        <div className="max-w-3xl reveal">
+          <div className="eyebrow">
+            <Building2 className="h-3.5 w-3.5" />
+            Enterprise
+          </div>
+
+          <h2 className="mt-5 text-4xl md:text-5xl font-semibold leading-tight">
+            Enterprise Mental Health{" "}
+            <span className="font-serif italic text-sunset">
+              Solutions
+            </span>
+          </h2>
+
+          <p className="mt-5 text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            AI-powered, personalised digital therapeutics designed to support
+            organisations with proactive mental health and wellbeing
+            solutions.
+          </p>
+        </div>
+
+        {/* Enterprise Video */}
+        <div className="reveal mt-12 rounded-3xl overflow-hidden border border-border shadow-2xl bg-black">
+          <video
+            src={enterpriseVideo}
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full h-auto"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
+
 /* ---------- Platform ---------- */
 function Platform() {
   const stack = [
@@ -777,14 +833,25 @@ function Wearable() {
             </span>
           </h2>
           <p className="mt-6 text-lg text-white/70 max-w-2xl">
-            A smart safety wearable for school children, college students,
-            women, and vulnerable individuals. GPS tracking, SOS alerts, and
+            A smart safety wearable for vulnerable individuals. GPS tracking, SOS alerts, and
             vital-sign monitoring — with AI distress detection that triggers
             help even when the user can't.
           </p>
         </div>
 
         {/* Video */}
+{/* Elder Care Video */}
+<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+  <video
+    src={elderCareVideo}
+    controls
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+</div>
+
+
         <div className="reveal mt-14 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
           <video
             src={wearableVideo}
@@ -2056,6 +2123,8 @@ export default function Index() {
       <Building />
       <Mission />
       <Outcomes />
+            <Enterprise />
+
       <Platform />
       <Wearable />
       <DataMission />
