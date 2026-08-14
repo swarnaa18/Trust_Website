@@ -84,11 +84,113 @@ function useReveal() {
   }, []);
 }
 
+// /* ---------- Nav ---------- */
+
+// const NAV = [
+//   { label: "Crisis", href: "#crisis" },
+//     { label: "Enterprise", href: "#enterprise" },
+//   { label: "Platform", href: "#platform" },
+//   { label: "Wearable", href: "#wearable" },
+//   { label: "Technology", href: "#tech" },
+//   { label: "Incubations & Partnerships", href: "#partnerships" },
+//   { label: "Awards", href: "#awards" },
+//   { label: "Team", href: "#team" },
+// ];
+
+// function Nav() {
+//   const [open, setOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   useEffect(() => {
+//     const f = () => setScrolled(window.scrollY > 12);
+//     window.addEventListener("scroll", f);
+//     return () => window.removeEventListener("scroll", f);
+//   }, []);
+//   return (
+//     <header
+//       className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}
+//     >
+//       <div className="container-trust">
+//         <div
+//           className={`flex items-center justify-between rounded-full px-4 lg:px-6 py-2.5 transition-all ${scrolled ? "glass-dark shadow-2xl" : ""}`}
+//         >
+//           <a href="#top" className="flex items-center gap-3">
+//             <img
+//               src={logo}
+//               alt="TRUST logo"
+//               className="h-14 w-auto object-contain"
+//             />
+//             <span className="font-semibold tracking-[0.25em] text-sm text-white">
+//               TRUST
+//             </span>
+//           </a>
+//           <nav className="hidden lg:flex items-center gap-1">
+//             {NAV.map((n) => (
+//               <a
+//                 key={n.href}
+//                 href={n.href}
+//                 className="px-3.5 py-2 text-sm font-medium text-white/75 hover:text-white transition-colors"
+//               >
+//                 {n.label}
+//               </a>
+//             ))}
+//           </nav>
+//           <div className="hidden lg:flex items-center gap-2">
+//             <a
+//               href="#contact"
+//               className="btn-ghost !py-2.5 !px-4 !text-xs !text-white !border-white/25 hover:!text-sunset hover:!border-sunset"
+//             >
+//               <Navigation className="h-4 w-4" /> Locate Us
+//             </a>
+//             <a href="#cta" className="btn-primary !py-2.5 !px-5 !text-xs">
+//               Request a Demo <ChevronRight className="h-4 w-4" />
+//             </a>
+//           </div>
+//           <button
+//             className="lg:hidden p-2 text-white"
+//             onClick={() => setOpen(!open)}
+//             aria-label="Menu"
+//           >
+//             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+//           </button>
+//         </div>
+//         {open && (
+//           <div className="lg:hidden mt-3 rounded-2xl glass p-4 space-y-1">
+//             {NAV.map((n) => (
+//               <a
+//                 key={n.href}
+//                 href={n.href}
+//                 onClick={() => setOpen(false)}
+//                 className="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-secondary"
+//               >
+//                 {n.label}
+//               </a>
+//             ))}
+//             <a
+//               href="#contact"
+//               onClick={() => setOpen(false)}
+//               className="btn-ghost w-full mt-2"
+//             >
+//               <Navigation className="h-4 w-4" /> Locate Us
+//             </a>
+//             <a
+//               href="#cta"
+//               onClick={() => setOpen(false)}
+//               className="btn-primary w-full mt-2"
+//             >
+//               Request a Demo
+//             </a>
+//           </div>
+//         )}
+//       </div>
+//     </header>
+//   );
+// }
+
 /* ---------- Nav ---------- */
 
 const NAV = [
   { label: "Crisis", href: "#crisis" },
-    { label: "Enterprise", href: "#enterprise" },
+  { label: "Enterprise", href: "#enterprise" },
   { label: "Platform", href: "#platform" },
   { label: "Wearable", href: "#wearable" },
   { label: "Technology", href: "#tech" },
@@ -100,78 +202,167 @@ const NAV = [
 function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const f = () => setScrolled(window.scrollY > 12);
+
     window.addEventListener("scroll", f);
+
     return () => window.removeEventListener("scroll", f);
   }, []);
+
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? "py-3" : "py-4"
+      }`}
     >
-      <div className="container-trust">
+      <div className="w-full max-w-[1700px] mx-auto px-4 lg:px-6">
         <div
-          className={`flex items-center justify-between rounded-full px-4 lg:px-6 py-2.5 transition-all ${scrolled ? "glass-dark shadow-2xl" : ""}`}
+          className={`
+            flex items-center
+            rounded-full
+            border border-white/10
+            backdrop-blur-xl
+            transition-all duration-300
+            ${
+              scrolled
+                ? "glass-dark shadow-2xl"
+                : "bg-midnight/80 shadow-xl"
+            }
+            px-4 lg:px-5
+            py-2
+          `}
         >
-          <a href="#top" className="flex items-center gap-3">
+          {/* ---------- Logo ---------- */}
+          <a
+            href="#top"
+            className="flex items-center shrink-0 mr-4 xl:mr-6"
+          >
             <img
               src={logo}
               alt="TRUST logo"
-              className="h-14 w-auto object-contain"
+              className="h-14 xl:h-16 w-auto object-contain"
             />
-            <span className="font-semibold tracking-[0.25em] text-sm text-white">
-              TRUST
-            </span>
           </a>
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="px-3.5 py-2 text-sm font-medium text-white/75 hover:text-white transition-colors"
-              >
-                {n.label}
-              </a>
-            ))}
+
+          {/* ---------- Desktop Navigation ---------- */}
+          <nav className="hidden lg:flex flex-1 items-center justify-center min-w-0">
+            <div className="flex items-center justify-center gap-0.5 xl:gap-1">
+              {NAV.map((n) => (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  className="
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    whitespace-nowrap
+                    rounded-full
+                    px-2.5
+                    xl:px-3
+                    py-2.5
+                    text-[13px]
+                    xl:text-sm
+                    font-medium
+                    text-white/75
+                    hover:text-white
+                    hover:bg-white/5
+                    transition-all
+                    duration-200
+                  "
+                >
+                  {n.label}
+                </a>
+              ))}
+            </div>
           </nav>
-          <div className="hidden lg:flex items-center gap-2">
+
+          {/* ---------- Right Actions ---------- */}
+          <div className="hidden lg:flex items-center gap-2 shrink-0 ml-4">
             <a
               href="#contact"
-              className="btn-ghost !py-2.5 !px-4 !text-xs !text-white !border-white/25 hover:!text-sunset hover:!border-sunset"
+              className="
+                btn-ghost
+                !py-2.5
+                !px-4
+                !text-xs
+                !text-white
+                !border-white/25
+                hover:!text-sunset
+                hover:!border-sunset
+                whitespace-nowrap
+              "
             >
-              <Navigation className="h-4 w-4" /> Locate Us
+              <Navigation className="h-4 w-4" />
+              <span>Locate Us</span>
             </a>
-            <a href="#cta" className="btn-primary !py-2.5 !px-5 !text-xs">
-              Request a Demo <ChevronRight className="h-4 w-4" />
+
+            <a
+              href="#cta"
+              className="
+                btn-primary
+                !py-2.5
+                !px-5
+                !text-xs
+                whitespace-nowrap
+              "
+            >
+              <span>Request a Demo</span>
+              <ChevronRight className="h-4 w-4" />
             </a>
           </div>
+
+          {/* ---------- Mobile Menu Button ---------- */}
           <button
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden ml-auto p-2 text-white"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
+            aria-expanded={open}
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
+
+        {/* ---------- Mobile Navigation ---------- */}
         {open && (
-          <div className="lg:hidden mt-3 rounded-2xl glass p-4 space-y-1">
+          <div className="lg:hidden mt-3 rounded-2xl glass p-4 space-y-1 border border-white/10">
             {NAV.map((n) => (
               <a
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-secondary"
+                className="
+                  block
+                  px-3
+                  py-2.5
+                  rounded-lg
+                  text-sm
+                  font-medium
+                  text-white/80
+                  hover:text-white
+                  hover:bg-secondary
+                  transition-colors
+                "
               >
                 {n.label}
               </a>
             ))}
+
             <a
               href="#contact"
               onClick={() => setOpen(false)}
               className="btn-ghost w-full mt-2"
             >
-              <Navigation className="h-4 w-4" /> Locate Us
+              <Navigation className="h-4 w-4" />
+              Locate Us
             </a>
+
             <a
               href="#cta"
               onClick={() => setOpen(false)}
