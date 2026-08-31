@@ -19,7 +19,8 @@ import Manish from "@/assets/trust/Manish.jpg";
 import Balraj from "@/assets/trust/Balraj.jpeg";
 import awardsImg from "@/assets/trust/award1.png";
 import awardsImg2 from "@/assets/trust/award2.png";
-import awardsImg3 from "@/assets/trust/award3.jpeg"
+import awardsImg3 from "@/assets/trust/award3.jpeg";
+import wearable2 from "@/assets/trust/wearable_2.mp4";
 import {
   Activity,
   AlertTriangle,
@@ -939,6 +940,19 @@ function Wearable() {
     preload="metadata"
     className="absolute inset-0 w-full h-full object-cover"
   />
+</div>
+
+{/* Wearable 2 Video */}
+<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+  <video
+    src={wearable2}
+    controls
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    Your browser does not support the video tag.
+  </video>
 </div>
 
 
