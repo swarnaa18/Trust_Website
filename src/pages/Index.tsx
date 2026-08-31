@@ -911,9 +911,9 @@ function Wearable() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.2),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.2),transparent_50%)]" />
       <div className="container-trust relative">
         <div className="max-w-3xl reveal">
-          <div className="pill bg-white/10 border border-white/15 text-white">
+          {/* <div className="pill bg-white/10 border border-white/15 text-white">
             <Shield className="h-3.5 w-3.5" /> Children & Women Safety Wearable
-          </div>
+          </div> */}
           <h2 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05]">
             Real-Time Protection.
             <br />
