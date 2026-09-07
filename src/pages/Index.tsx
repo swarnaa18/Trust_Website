@@ -10,7 +10,7 @@ import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
 import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
-import incubationsImg from "@/assets/trust/incubation.png";
+import partnershipImg from "@/assets/trust/partnership.jpeg";
 import Agnelo from "@/assets/trust/Agnelo.png";
 import Arnav from "@/assets/trust/Arnav.jpg";
 import Thomas from "@/assets/trust/Thomas.png";
@@ -1392,7 +1392,7 @@ function Partnerships() {
 
         <div className="reveal mt-14 rounded-3xl overflow-hidden border border-border shadow-xl bg-white p-6">
           <img
-            src={incubationsImg}
+            src={partnershipImg}
             alt="Incubations and Partnerships"
             className="w-full h-auto object-contain"
           />
