@@ -1555,6 +1555,16 @@ function Team() {
       ],
     },
     {
+      name: "Arnav Jain",
+      role: "Chief Technology Officer",
+      img: Arnav,
+      icon: Database,
+      d: "Leads the development and integration of next-generation wearable technologies that enable continuous monitoring, safety, and AI-powered digital therapeutics.",
+    },
+    
+  ];
+  const executiveLeadership = [
+    {
       name: "Thomas 'Tommy' S.",
       role: "Chief Consultant – Americas",
       img: Thomas,
@@ -1562,8 +1572,6 @@ function Team() {
         "Provides strategic leadership for Trust AI's expansion across the Americas, fostering partnerships, market development, and international collaborations.",
       ],
     },
-  ];
-  const executiveLeadership = [
     {
       name: "Subidita Chakraborty",
       role: "Senior Vice President – Partnerships & Alliances",
@@ -1585,13 +1593,7 @@ function Team() {
       icon: Pill,
       d: "Leads corporate communications, brand strategy, multilingual content, public relations, and stakeholder engagement across healthcare, government, and enterprise initiatives.",
     },
-    {
-      name: "Arnav Jain",
-      role: "Head – Wearables",
-      img: Arnav,
-      icon: Database,
-      d: "Leads the development and integration of next-generation wearable technologies that enable continuous monitoring, safety, and AI-powered digital therapeutics.",
-    },
+    
   ];
   const aiEngineering = [
     {
@@ -2225,8 +2227,7 @@ export default function Index() {
       <Building />
       <Mission />
       <Outcomes />
-            <Enterprise />
-
+      <Enterprise />  
       <Platform />
       <Wearable />
       <DataMission />
