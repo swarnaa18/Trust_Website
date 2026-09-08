@@ -942,18 +942,7 @@ function Wearable() {
   />
 </div>
 
-{/* Wearable 2 Video */}
-<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
-  <video
-    src={wearable2}
-    controls
-    playsInline
-    preload="metadata"
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    Your browser does not support the video tag.
-  </video>
-</div>
+
 
 
         <div className="reveal mt-14 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
@@ -2214,6 +2203,35 @@ export default function Index() {
       <Nav />
       <Hero />
       <section className="py-8 bg-background">
+
+        {/* Wearable 2 Video */}
+{/* Wearable 2 Video */}
+<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+  <video
+    src={wearable2}
+    controls
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
+{/* <div className="reveal mt-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black">
+  <video
+    src={wearable2}
+    controls
+    playsInline
+    preload="metadata"
+    className="w-full h-full object-cover"
+  >
+    Your browser does not support the video tag.
+  </video>
+</div> */}
+
+
         <div className="container-trust">
           <img
             src={trustBanner}
