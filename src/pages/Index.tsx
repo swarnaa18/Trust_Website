@@ -8,7 +8,7 @@ import brainVault from "@/assets/trust/brain-vault.jpg";
 // import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
-import trustBanner from "@/assets/trust/trust-banner.png";
+// import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import partnershipImg from "@/assets/trust/partnership.jpeg";
 import Agnelo from "@/assets/trust/Agnelo.png";
@@ -85,10 +85,13 @@ function useReveal() {
   }, []);
 }
 
-
 /* ---------- Nav ---------- */
 
 const NAV = [
+  {
+    label: "Health Intelligence Wearable",
+    href: "#health-intelligence-wearable",
+  },
   { label: "Crisis", href: "#crisis" },
   { label: "Enterprise", href: "#enterprise" },
   { label: "Platform", href: "#platform" },
@@ -125,20 +128,13 @@ function Nav() {
             border border-white/10
             backdrop-blur-xl
             transition-all duration-300
-            ${
-              scrolled
-                ? "glass-dark shadow-2xl"
-                : "bg-midnight/80 shadow-xl"
-            }
+            ${scrolled ? "glass-dark shadow-2xl" : "bg-midnight/80 shadow-xl"}
             px-4 lg:px-5
             py-2
           `}
         >
           {/* ---------- Logo ---------- */}
-          <a
-            href="#top"
-            className="flex items-center shrink-0 mr-4 xl:mr-6"
-          >
+          <a href="#top" className="flex items-center shrink-0 mr-4 xl:mr-6">
             <img
               src={logo}
               alt="TRUST logo"
@@ -221,11 +217,7 @@ function Nav() {
             aria-label="Menu"
             aria-expanded={open}
           >
-            {open ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
@@ -413,6 +405,52 @@ function Agenda() {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Health Intelligence Wearable ---------- */
+function HealthIntelligenceWearable() {
+  return (
+    <section
+      id="health-intelligence-wearable"
+      className="section bg-midnight text-white relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.2),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.2),transparent_50%)]" />
+
+      <div className="container-trust relative">
+        <div className="max-w-3xl reveal">
+          <div className="pill bg-white/10 border border-white/15 text-white">
+            <Activity className="h-3.5 w-3.5" />
+            Health Intelligence Wearable
+          </div>
+
+          <h2 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05]">
+            Health Intelligence.
+            <br />
+            
+          </h2>
+
+          <p className="mt-6 text-lg text-white/70 max-w-2xl">
+            From Episodic Care to Continuous Care. Building longitudinal health
+            intelligence across prevention, rehabilitation, recovery, elder care
+            and post-discharge journeys—helping people stay healthier, longer.
+          </p>
+        </div>
+
+        {/* Wearable 2 Video */}
+        <div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+          <video
+            src={wearable2}
+            controls
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
@@ -748,7 +786,6 @@ function Enterprise() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.10),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.10),transparent_50%)]" />
 
       <div className="container-trust relative">
-
         {/* Heading */}
         <div className="max-w-3xl reveal">
           <div className="eyebrow">
@@ -758,15 +795,12 @@ function Enterprise() {
 
           <h2 className="mt-5 text-4xl md:text-5xl font-semibold leading-tight">
             Enterprise Mental Health{" "}
-            <span className="font-serif italic text-sunset">
-              Solutions
-            </span>
+            <span className="font-serif italic text-sunset">Solutions</span>
           </h2>
 
           <p className="mt-5 text-lg text-muted-foreground max-w-3xl leading-relaxed">
             AI-powered, personalised digital therapeutics designed to support
-            organisations with proactive mental health and wellbeing
-            solutions.
+            organisations with proactive mental health and wellbeing solutions.
           </p>
         </div>
 
@@ -782,13 +816,10 @@ function Enterprise() {
             Your browser does not support the video tag.
           </video>
         </div>
-
       </div>
     </section>
   );
 }
-
-
 
 /* ---------- Platform ---------- */
 function Platform() {
@@ -924,26 +955,23 @@ function Wearable() {
             </span>
           </h2>
           <p className="mt-6 text-lg text-white/70 max-w-2xl">
-            A smart safety wearable for vulnerable individuals. GPS tracking, SOS alerts, and
-            vital-sign monitoring — with AI distress detection that triggers
-            help even when the user can't.
+            A smart safety wearable for vulnerable individuals. GPS tracking,
+            SOS alerts, and vital-sign monitoring — with AI distress detection
+            that triggers help even when the user can't.
           </p>
         </div>
 
         {/* Video */}
-{/* Elder Care Video */}
-<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
-  <video
-    src={elderCareVideo}
-    controls
-    playsInline
-    preload="metadata"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-</div>
-
-
-
+        {/* Elder Care Video */}
+        <div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+          <video
+            src={elderCareVideo}
+            controls
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
 
         <div className="reveal mt-14 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
           <video
@@ -1395,9 +1423,7 @@ function Awards() {
   return (
     <section id="awards" className="section bg-secondary/40">
       <div className="container-trust">
-
         <div className="max-w-3xl mx-auto text-center reveal">
-
           <div className="eyebrow">
             <Award className="h-3.5 w-3.5" />
             Awards & Recognition
@@ -1406,7 +1432,8 @@ function Awards() {
           <h2 className="mt-5 text-4xl md:text-5xl font-semibold">
             Recognized for
             <span className="font-serif italic text-sunset">
-              {" "}Innovation & Excellence
+              {" "}
+              Innovation & Excellence
             </span>
           </h2>
 
@@ -1415,15 +1442,12 @@ function Awards() {
             contributions to Digital Therapeutics, Artificial Intelligence,
             Healthcare Innovation and Enterprise Digital Transformation.
           </p>
-
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-16">
-
           {/* Award 1 */}
 
           <div className="trust-card overflow-hidden reveal">
-
             <img
               src={awardsImg}
               alt="CIO Tech Leadership Excellence Awards 2026"
@@ -1431,27 +1455,22 @@ function Awards() {
             />
 
             <div className="p-8">
-
               <h3 className="text-2xl font-semibold">
                 CIO Tech Leadership Excellence Awards 2026
               </h3>
 
               <p className="mt-4 text-muted-foreground leading-8">
-                Vijay Anand, Co-founder & CIO of TRUST DTx,
-                received the
+                Vijay Anand, Co-founder & CIO of TRUST DTx, received the
                 <strong> CIO of the Year – Enterprise Transformation </strong>
-                award for driving innovation in AI-powered Digital
-                Therapeutics and healthcare transformation.
+                award for driving innovation in AI-powered Digital Therapeutics
+                and healthcare transformation.
               </p>
-
             </div>
-
           </div>
 
           {/* Award 2 */}
 
           <div className="trust-card overflow-hidden reveal">
-
             <img
               src={awardsImg2}
               alt="CIO Accelerator X Awards 2026"
@@ -1459,51 +1478,43 @@ function Awards() {
             />
 
             <div className="p-8">
-
               <h3 className="text-2xl font-semibold">
                 CIO Accelerator X Awards 2026
               </h3>
 
               <p className="mt-4 text-muted-foreground leading-8">
-                Vijay Anand, CIO of TRUST DTx,
-                was honoured at the
+                Vijay Anand, CIO of TRUST DTx, was honoured at the
                 <strong> CIO Accelerator X Awards 2026 </strong>
-                for outstanding leadership in Healthcare Technology,
-                Artificial Intelligence and Digital Innovation.
+                for outstanding leadership in Healthcare Technology, Artificial
+                Intelligence and Digital Innovation.
               </p>
-
             </div>
-
           </div>
 
           {/* Award 3 */}
 
-<div className="trust-card overflow-hidden reveal">
+          <div className="trust-card overflow-hidden reveal">
+            <img
+              src={awardsImg3}
+              alt="AIWoW Governing Board Appointment"
+              className="w-full object-cover rounded-t-2xl"
+            />
 
-  <img
-    src={awardsImg3}
-    alt="AIWoW Governing Board Appointment"
-    className="w-full object-cover rounded-t-2xl"
-  />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold">
+                AIWoW Governing Board Leadership
+              </h3>
 
-  <div className="p-6">
-
-  <h3 className="text-xl font-semibold">
-    AIWoW Governing Board Leadership
-  </h3>
-
-  <p className="mt-3 text-muted-foreground text-sm leading-6">
-    Vijay Anand, Co-founder & CIO of TRUST DTx, has been appointed to the
-    <strong> AIWoW™ Governing Board</strong>, recognizing his leadership in
-    AI, digital transformation, cybersecurity, and responsible innovation.
-  </p>
-
-</div>
-
-</div>
-
+              <p className="mt-3 text-muted-foreground text-sm leading-6">
+                Vijay Anand, Co-founder & CIO of TRUST DTx, has been appointed
+                to the
+                <strong> AIWoW™ Governing Board</strong>, recognizing his
+                leadership in AI, digital transformation, cybersecurity, and
+                responsible innovation.
+              </p>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
@@ -1545,12 +1556,12 @@ function Team() {
     },
     {
       name: "Arnav Jain",
-      role: "Chief Technology Officer",
+      role: "CHIEF TECHNOLOGY OFFICER (CTO)",
       img: Arnav,
       icon: Database,
-      d: "Leads the development and integration of next-generation wearable technologies that enable continuous monitoring, safety, and AI-powered digital therapeutics.",
-    },
-    
+      bullets: ["Leads Trust AI’s technology strategy, product engineering, AI integration, and wearable technology, driving the development of scalable, intelligent solutions for continuous health monitoring and longitudinal care.",
+      ],
+      },
   ];
   const executiveLeadership = [
     {
@@ -1582,7 +1593,6 @@ function Team() {
       icon: Pill,
       d: "Leads corporate communications, brand strategy, multilingual content, public relations, and stakeholder engagement across healthcare, government, and enterprise initiatives.",
     },
-    
   ];
   const aiEngineering = [
     {
@@ -1941,71 +1951,55 @@ function Contact() {
             ))}
           </div>
 
-{/* Contact Information */}
+          {/* Contact Information */}
 
-<section className="mt-14">
-  <div className="trust-card p-10 reveal">
+          <section className="mt-14">
+            <div className="trust-card p-10 reveal">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-4xl font-semibold">Contact Us</h2>
 
-    <div className="max-w-4xl mx-auto text-center">
+                <p className="mt-5 text-lg text-muted-foreground leading-8">
+                  For inquiries, partnerships, product demonstrations our team
+                  is here to help.
+                </p>
 
-      <h2 className="text-4xl font-semibold">
-        Contact Us
-      </h2>
+                <div className="mt-10">
+                  <div className="inline-flex items-center gap-3 rounded-full border border-border px-6 py-4 bg-card shadow">
+                    <Mail className="h-6 w-6 text-sunset" />
 
-      <p className="mt-5 text-lg text-muted-foreground leading-8">
-        For inquiries, partnerships, product demonstrations our team is here to help.
-      </p>
+                    <a
+                      href="mailto:agnelo@trustdtx.ai"
+                      className="text-xl font-semibold text-sunset hover:underline"
+                    >
+                      agnelo@trustdtx.ai
+                    </a>
+                  </div>
+                </div>
 
-      <div className="mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 max-w-3xl mx-auto">
+                  <div>
+                    <Handshake className="mx-auto h-10 w-10 text-sunset" />
 
-        <div className="inline-flex items-center gap-3 rounded-full border border-border px-6 py-4 bg-card shadow">
+                    <h3 className="mt-4 text-xl font-semibold">Partnerships</h3>
 
-          <Mail className="h-6 w-6 text-sunset" />
+                    <p className="mt-3 text-muted-foreground">
+                      Collaborate with TRUST to advance AI-powered Digital
+                      Therapeutics and healthcare innovation.
+                    </p>
+                  </div>
 
-          <a
-            href="mailto:agnelo@trustdtx.ai"
-            className="text-xl font-semibold text-sunset hover:underline"
-          >
-            agnelo@trustdtx.ai
-          </a>
+                  <div>
+                    <Presentation className="mx-auto h-10 w-10 text-sunset" />
 
-        </div>
+                    <h3 className="mt-4 text-xl font-semibold">Product Demo</h3>
 
-      </div>
+                    <p className="mt-3 text-muted-foreground">
+                      Schedule a live demonstration of the TRUST platform and
+                      wearable ecosystem.
+                    </p>
+                  </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 max-w-3xl mx-auto">
-
-        <div>
-
-          <Handshake className="mx-auto h-10 w-10 text-sunset" />
-
-          <h3 className="mt-4 text-xl font-semibold">
-            Partnerships
-          </h3>
-
-          <p className="mt-3 text-muted-foreground">
-            Collaborate with TRUST to advance AI-powered Digital Therapeutics
-            and healthcare innovation.
-          </p>
-
-        </div>
-
-        <div>
-
-          <Presentation className="mx-auto h-10 w-10 text-sunset" />
-
-          <h3 className="mt-4 text-xl font-semibold">
-            Product Demo
-          </h3>
-
-          <p className="mt-3 text-muted-foreground">
-            Schedule a live demonstration of the TRUST platform and wearable
-            ecosystem.
-          </p>
-
-        </div>
-
-        {/* <div>
+                  {/* <div>
 
           <LifeBuoy className="mx-auto h-10 w-10 text-sunset" />
 
@@ -2019,14 +2013,10 @@ function Contact() {
           </p>
 
         </div> */}
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Contact form */}
           <div className="reveal">
@@ -2202,50 +2192,15 @@ export default function Index() {
     <main id="main-content" className="min-h-screen">
       <Nav />
       <Hero />
-      <section className="py-8 bg-background">
-
-        {/* Wearable 2 Video */}
-{/* Wearable 2 Video */}
-<div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
-  <video
-    src={wearable2}
-    controls
-    playsInline
-    preload="metadata"
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-
-{/* <div className="reveal mt-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black">
-  <video
-    src={wearable2}
-    controls
-    playsInline
-    preload="metadata"
-    className="w-full h-full object-cover"
-  >
-    Your browser does not support the video tag.
-  </video>
-</div> */}
-
-
-        <div className="container-trust">
-          <img
-            src={trustBanner}
-            alt="Trust Quote Banner"
-            className="w-full rounded-2xl shadow-lg"
-          />
-        </div>
-      </section>
+      <HealthIntelligenceWearable />
+      <section className="py-8 bg-background"></section>
       <Agenda />
+
       <Crisis />
       <Building />
       <Mission />
       <Outcomes />
-      <Enterprise />  
+      <Enterprise />
       <Platform />
       <Wearable />
       <DataMission />
