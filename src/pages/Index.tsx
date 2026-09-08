@@ -88,8 +88,7 @@ function useReveal() {
 /* ---------- Nav ---------- */
 
 const NAV = [
-  {
-    label: "Health Intelligence Wearable", href: "#health-intelligence-wearable" },
+  { label: "Health Intelligence Wearable", href: "#health-intelligence-wearable" },
   { label: "Crisis", href: "#crisis" },
   { label: "Enterprise", href: "#enterprise" },
   { label: "Platform", href: "#platform" },
