@@ -512,49 +512,49 @@ function Agenda() {
 }
 
 /* ---------- Health Intelligence Wearable ---------- */
-function HealthIntelligenceWearable() {
-  return (
-    <section
-      id="health-intelligence-wearable"
-      className="section bg-midnight text-white relative overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.2),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.2),transparent_50%)]" />
+// function HealthIntelligenceWearable() {
+//   return (
+//     <section
+//       id="health-intelligence-wearable"
+//       className="section bg-midnight text-white relative overflow-hidden"
+//     >
+//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.2),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.2),transparent_50%)]" />
 
-      <div className="container-trust relative">
-        <div className="max-w-3xl reveal">
-          <div className="pill bg-white/10 border border-white/15 text-white">
-            <Activity className="h-3.5 w-3.5" />
-            Health Intelligence Wearable
-          </div>
+//       <div className="container-trust relative">
+//         <div className="max-w-3xl reveal">
+//           <div className="pill bg-white/10 border border-white/15 text-white">
+//             <Activity className="h-3.5 w-3.5" />
+//             Health Intelligence Wearable
+//           </div>
 
-          <h2 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05]">
-            Health Intelligence.
-            <br />
-          </h2>
+//           <h2 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05]">
+//             Health Intelligence.
+//             <br />
+//           </h2>
 
-          <p className="mt-6 text-lg text-white/70 max-w-2xl">
-            From Episodic Care to Continuous Care. Building longitudinal health
-            intelligence across prevention, rehabilitation, recovery, elder care
-            and post-discharge journeys—helping people stay healthier, longer.
-          </p>
-        </div>
+//           <p className="mt-6 text-lg text-white/70 max-w-2xl">
+//             From Episodic Care to Continuous Care. Building longitudinal health
+//             intelligence across prevention, rehabilitation, recovery, elder care
+//             and post-discharge journeys—helping people stay healthier, longer.
+//           </p>
+//         </div>
 
-        {/* Wearable 2 Video */}
-        <div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
-          <video
-            src={wearable2}
-            controls
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         {/* Wearable 2 Video */}
+//         <div className="reveal mt-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-black relative">
+//           <video
+//             src={wearable2}
+//             controls
+//             playsInline
+//             preload="metadata"
+//             className="absolute inset-0 w-full h-full object-cover"
+//           >
+//             Your browser does not support the video tag.
+//           </video>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ---------- Crisis ---------- */
 function Crisis() {
@@ -2292,7 +2292,7 @@ export default function Index() {
     <main id="main-content" className="min-h-screen">
       <Nav />
       <VideoShowcase />
-      <HealthIntelligenceWearable />
+      {/* <HealthIntelligenceWearable /> */}
       <section className="py-8 bg-background"></section>
       <Agenda />
       <Crisis />
