@@ -4,6 +4,8 @@ import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
 import elderCareVideo from "@/assets/trust/elder-care.mp4";
 import enterpriseVideo from "@/assets/trust/enterprise.mp4";
+import hilBridgeVideo from "@/assets/trust/HIL-Bridge.mp4";
+import autismVideo from "@/assets/trust/English Autism.mp4";
 import brainVault from "@/assets/trust/brain-vault.jpg";
 // import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
@@ -88,7 +90,10 @@ function useReveal() {
 /* ---------- Nav ---------- */
 
 const NAV = [
-  { label: "Health Intelligence Wearable", href: "#health-intelligence-wearable" },
+  {
+    label: "Health Intelligence Wearable",
+    href: "#health-intelligence-wearable",
+  },
   { label: "Crisis", href: "#crisis" },
   { label: "Enterprise", href: "#enterprise" },
   { label: "Platform", href: "#platform" },
@@ -267,86 +272,184 @@ function Nav() {
 }
 
 /* ---------- Hero ---------- */
-function Hero() {
+// function Hero() {
+//   return (
+//     <section
+//       id="top"
+//       className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-grad-hero text-white"
+//     >
+//       {/* ambient orbs */}
+//       <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-grad-sunset opacity-30 blur-3xl animate-float" />
+//       <div
+//         className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-grad-ocean opacity-30 blur-3xl animate-float"
+//         style={{ animationDelay: "2s" }}
+//       />
+//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(184_80%_38%/0.3),transparent_50%)]" />
+
+//       <div className="container-trust relative">
+//         <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+//           <div className="lg:col-span-7">
+//             <div className="reveal pill bg-white/10 border border-white/15 text-white/90">
+//               <Sparkles className="h-3.5 w-3.5" /> Predictive · Personalised ·
+//               Researched · AI Driven
+//             </div>
+//             <h1 className="reveal mt-7 text-5xl md:text-6xl lg:text-[4.75rem] font-semibold leading-[0.95]">
+//               Better{" "}
+//               <span className="font-serif italic text-sunset">
+//                 Mental Health
+//               </span>
+//               ,<br />
+//               For Everyone.
+//             </h1>
+//             <p className="reveal mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
+//               TRUST replaces reactive treatment with predictive, personalised
+//               intervention — an AI-assisted Digital Therapeutics platform for
+//               early risk detection, relapse prevention, and real-time safety.
+//             </p>
+//             <div className="reveal mt-10 flex flex-wrap gap-3">
+//               <a href="#cta" className="btn-primary">
+//                 Request a Pilot <ChevronRight className="h-4 w-4" />
+//               </a>
+//               <a
+//                 href="#platform"
+//                 className="btn-ghost !text-white !border-white/20 hover:!text-sunset hover:!border-sunset"
+//               >
+//                 Explore the Platform
+//               </a>
+//             </div>
+//           </div>
+
+//           {/* Hero Video — Phone Mockup */}
+//           <div className="lg:col-span-5 flex justify-center">
+//             <div className="reveal relative w-[280px] sm:w-[320px] rounded-[2.5rem] bg-white p-3 shadow-2xl border border-white/20">
+//               <div className="overflow-hidden rounded-[2rem] bg-black aspect-[9/19.5]">
+//                 <video
+//                   src={trustDemoVideo}
+//                   autoPlay
+//                   loop
+//                   muted
+//                   playsInline
+//                   controls
+//                   preload="auto"
+//                   className="w-full h-full object-cover"
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* stat strip */}
+//         <div className="reveal mt-12 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+//           {[
+//             ["1 in 8", "globally affected"],
+//             ["40–60%", "1-year relapse rate"],
+//             ["70–85%", "untreated in LMICs"],
+//             ["$1T", "lost annually"],
+//           ].map(([n, l]) => (
+//             <div key={l} className="bg-midnight/40 p-6">
+//               <div className="text-3xl md:text-4xl font-semibold grad-text">
+//                 {n}
+//               </div>
+//               <div className="mt-2 text-xs uppercase tracking-widest text-white/60">
+//                 {l}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+/* -------- Updated Hero section -------- */
+/* ---------- Video Showcase ---------- */
+function VideoShowcase() {
+  const videos = [
+    {
+      title: "Health Intelligence Wearable",
+      video: wearable2,
+      description:
+        "From Episodic Care to Continuous Care. Building longitudinal health intelligence across prevention, rehabilitation, recovery, elder care and post-discharge journeys—helping people stay healthier, longer.",
+    },
+    {
+      title: "Enterprise",
+      video: enterpriseVideo,
+      description:
+        "AI-powered personalised digital therapeutics designed for proactive mental health and wellbeing.",
+    },
+    {
+      title: "Elder Care",
+      video: elderCareVideo,
+      description:
+        "Technology-enabled care and continuous support for healthier ageing and improved wellbeing.",
+    },
+    {
+      title: "Autism Care & Intelligence",
+      video: autismVideo,
+      description:
+    "Supporting individuals with autism through personalised care, intelligent insights, and connected digital health solutions.",
+    },
+  ];
+
   return (
-    <section
-      id="top"
-      className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-grad-hero text-white"
-    >
-      {/* ambient orbs */}
-      <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-grad-sunset opacity-30 blur-3xl animate-float" />
-      <div
-        className="absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-grad-ocean opacity-30 blur-3xl animate-float"
-        style={{ animationDelay: "2s" }}
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(184_80%_38%/0.3),transparent_50%)]" />
+    <section className="section bg-midnight text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.18),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.18),transparent_50%)]" />
 
       <div className="container-trust relative">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          <div className="lg:col-span-7">
-            <div className="reveal pill bg-white/10 border border-white/15 text-white/90">
-              <Sparkles className="h-3.5 w-3.5" /> Predictive · Personalised ·
-              Researched · AI Driven
-            </div>
-            <h1 className="reveal mt-7 text-5xl md:text-6xl lg:text-[4.75rem] font-semibold leading-[0.95]">
-              Better{" "}
-              <span className="font-serif italic text-sunset">
-                Mental Health
-              </span>
-              ,<br />
-              For Everyone.
-            </h1>
-            <p className="reveal mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-              TRUST replaces reactive treatment with predictive, personalised
-              intervention — an AI-assisted Digital Therapeutics platform for
-              early risk detection, relapse prevention, and real-time safety.
-            </p>
-            <div className="reveal mt-10 flex flex-wrap gap-3">
-              <a href="#cta" className="btn-primary">
-                Request a Pilot <ChevronRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#platform"
-                className="btn-ghost !text-white !border-white/20 hover:!text-sunset hover:!border-sunset"
-              >
-                Explore the Platform
-              </a>
-            </div>
-          </div>
+        
+        <div className="max-w-3xl reveal">
+          {/* <div className="pill bg-white/10 border border-white/15 text-white">
+            <Activity className="h-3.5 w-3.5" />
+            TRUST Digital Health Intelligence
+          </div> */}
 
-          {/* Hero Video — Phone Mockup */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="reveal relative w-[280px] sm:w-[320px] rounded-[2.5rem] bg-white p-3 shadow-2xl border border-white/20">
-              <div className="overflow-hidden rounded-[2rem] bg-black aspect-[9/19.5]">
-                <video
-                  src={trustDemoVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                  preload="auto"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          <h1 className="mt-6 text-4xl md:text-6xl font-semibold leading-[1.05]">
+            Better Mental Health,
+            <br />
+            <span className="font-serif italic text-sunset">For Everyone.</span>
+          </h1>
+
+          <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">
+            TRUST replaces reactive treatment with predictive, personalised intervention — an AI-assisted Digital Therapeutics platform for early risk detection, relapse prevention, and real-time safety.
+          </p>
         </div>
 
-        {/* stat strip */}
-        <div className="reveal mt-12 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-          {[
-            ["1 in 8", "globally affected"],
-            ["40–60%", "1-year relapse rate"],
-            ["70–85%", "untreated in LMICs"],
-            ["$1T", "lost annually"],
-          ].map(([n, l]) => (
-            <div key={l} className="bg-midnight/40 p-6">
-              <div className="text-3xl md:text-4xl font-semibold grad-text">
-                {n}
-              </div>
-              <div className="mt-2 text-xs uppercase tracking-widest text-white/60">
-                {l}
+        {/* Videos */}
+        <div className="mt-14 space-y-14">
+          {videos.map((item, index) => (
+            <div
+              key={item.title}
+              className="reveal"
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                {/* Video */}
+                <div className="lg:col-span-8">
+                  <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black aspect-video">
+                    <video
+                      src={item.video}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="lg:col-span-4">
+                  <div className="text-xs uppercase tracking-[0.25em] text-sunset font-semibold">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <h2 className="mt-3 text-3xl md:text-4xl font-semibold">
+                    {item.title}
+                  </h2>
+
+                  <p className="mt-5 text-white/70 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
@@ -427,7 +530,6 @@ function HealthIntelligenceWearable() {
           <h2 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05]">
             Health Intelligence.
             <br />
-            
           </h2>
 
           <p className="mt-6 text-lg text-white/70 max-w-2xl">
@@ -1556,9 +1658,10 @@ function Team() {
       role: "CHIEF TECHNOLOGY OFFICER (CTO)",
       img: Arnav,
       icon: Database,
-      bullets: ["Leads Trust AI’s technology strategy, product engineering, AI integration, and wearable technology, driving the development of scalable, intelligent solutions for continuous health monitoring and longitudinal care.",
+      bullets: [
+        "Leads Trust AI’s technology strategy, product engineering, AI integration, and wearable technology, driving the development of scalable, intelligent solutions for continuous health monitoring and longitudinal care.",
       ],
-      },
+    },
   ];
   const executiveLeadership = [
     {
@@ -2188,11 +2291,10 @@ export default function Index() {
   return (
     <main id="main-content" className="min-h-screen">
       <Nav />
-      <Hero />
+      <VideoShowcase />
       <HealthIntelligenceWearable />
       <section className="py-8 bg-background"></section>
       <Agenda />
-
       <Crisis />
       <Building />
       <Mission />
