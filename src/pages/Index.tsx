@@ -404,9 +404,9 @@ function VideoShowcase() {
           </div> */}
 
           <h1 className="mt-6 text-4xl md:text-6xl font-semibold leading-[1.05]">
-            Health Intelligence. For Better Care, Every Day.
+            Health Intelligence. 
             <br />
-            <span className="font-serif italic text-sunset">For Everyone.</span>
+            <span className="font-serif italic text-sunset">For Better Care, Every Day.</span>
           </h1>
 
           <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">
