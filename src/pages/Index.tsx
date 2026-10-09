@@ -404,7 +404,7 @@ function VideoShowcase() {
           </div> */}
 
           <h1 className="mt-6 text-4xl md:text-6xl font-semibold leading-[1.05]">
-            Better Mental Health,
+            Health Intelligence. For Better Care, Every Day.
             <br />
             <span className="font-serif italic text-sunset">For Everyone.</span>
           </h1>
