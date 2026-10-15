@@ -10,6 +10,7 @@ import brainVault from "@/assets/trust/brain-vault.jpg";
 // import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
+import sureshImg from "@/assets/trust/suresh.jpeg";
 // import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import partnershipImg from "@/assets/trust/partnership.jpeg";
@@ -387,7 +388,7 @@ function VideoShowcase() {
       title: "Autism Care & Intelligence",
       video: autismVideo,
       description:
-    "Supporting individuals with autism through personalised care, intelligent insights, and connected digital health solutions.",
+        "Supporting individuals with autism through personalised care, intelligent insights, and connected digital health solutions.",
     },
   ];
 
@@ -396,7 +397,6 @@ function VideoShowcase() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(18_100%_60%/0.18),transparent_50%),radial-gradient(circle_at_10%_80%,hsl(184_80%_38%/0.18),transparent_50%)]" />
 
       <div className="container-trust relative">
-        
         <div className="max-w-3xl reveal">
           {/* <div className="pill bg-white/10 border border-white/15 text-white">
             <Activity className="h-3.5 w-3.5" />
@@ -404,13 +404,17 @@ function VideoShowcase() {
           </div> */}
 
           <h1 className="mt-6 text-4xl md:text-6xl font-semibold leading-[1.05]">
-            Health Intelligence. 
+            Health Intelligence.
             <br />
-            <span className="font-serif italic text-sunset">For Better Care, Every Day.</span>
+            <span className="font-serif italic text-sunset">
+              For Better Care, Every Day.
+            </span>
           </h1>
 
           <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">
-            TRUST replaces reactive treatment with predictive, personalised intervention — an AI-assisted Digital Therapeutics platform for early risk detection, relapse prevention, and real-time safety.
+            TRUST replaces reactive treatment with predictive, personalised
+            intervention — an AI-assisted Digital Therapeutics platform for
+            early risk detection, relapse prevention, and real-time safety.
           </p>
         </div>
 
@@ -1637,20 +1641,30 @@ function Team() {
         "Leads Trust AI's vision, strategy, fundraising, partnerships, and commercialization, driving the development of evidence-based AI solutions that transform mental healthcare and addiction treatment.",
       ],
     },
-    {
-      name: "Dr. Alvin Joseph",
-      role: "Chief Medical Officer (CMO)",
-      img: alvinImg,
-      bullets: [
-        "Consultant Psychiatrist and clinical lead behind Trust AI's research and medical innovation. Oversees clinical validation, evidence generation, treatment protocols, and healthcare partnerships.",
-      ],
-    },
+
     {
       name: "B. Vijayanand",
       role: "Chief Information Officer (CIO)",
       img: vijayImg,
       bullets: [
         "Leads technology strategy, enterprise infrastructure, cybersecurity, and digital transformation, ensuring a secure, scalable, and reliable AI platform.",
+      ],
+    },
+    {
+      name: "Suresh Joseph",
+      role: "Chief Operating Officer (COO)",
+      img: sureshImg,
+      bullets: [
+        "Suresh Joseph brings over 30 years of experience across Fortune 500 corporations, including HP, with expertise in market research, business strategy, and operational leadership. He will lead Trust AI’s operational excellence and strategic growth, supporting its expansion into the US market.",
+      ],
+    },
+
+    {
+      name: "Dr. Alvin Joseph",
+      role: "Chief Medical Officer (CMO)",
+      img: alvinImg,
+      bullets: [
+        "Consultant Psychiatrist and clinical lead behind Trust AI's research and medical innovation. Oversees clinical validation, evidence generation, treatment protocols, and healthcare partnerships.",
       ],
     },
     {
@@ -1662,8 +1676,6 @@ function Team() {
         "Leads Trust AI’s technology strategy, product engineering, AI integration, and wearable technology, driving the development of scalable, intelligent solutions for continuous health monitoring and longitudinal care.",
       ],
     },
-  ];
-  const executiveLeadership = [
     {
       name: "Thomas 'Tommy' S.",
       role: "Chief Consultant – Americas",
@@ -1672,6 +1684,8 @@ function Team() {
         "Provides strategic leadership for Trust AI's expansion across the Americas, fostering partnerships, market development, and international collaborations.",
       ],
     },
+  ];
+  const executiveLeadership = [
     {
       name: "Subidita Chakraborty",
       role: "Senior Vice President – Partnerships & Alliances",
@@ -1753,7 +1767,7 @@ function Team() {
         </div>
 
         {/* Leadership */}
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {leadership.map((p, i) => (
             <div
               key={p.name}
