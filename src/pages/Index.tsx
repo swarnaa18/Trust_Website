@@ -1710,10 +1710,10 @@ function Team() {
   ];
   const aiEngineering = [
     {
-      name: "Abhishek Kumar",
-      role: "AI Tech Lead",
+      name: "Prathinav Karnala Venkata",
+      role: "Pre-Sales Manager",
       icon: Network,
-      d: "Leads AI application development, intelligent automation, and deployment of machine learning solutions across Trust AI's clinical platform.",
+      d: "Prathinav holds a Master’s degree in Information Technology from the University of Maryland. He brings healthcare technology experience from CareStack, along with an understanding of home care and customer relations. Based in New York, he leads pre-sales operations across the East Coast.",
     },
     {
       name: "Vishnu Priyan",
