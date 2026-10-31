@@ -101,7 +101,6 @@ const links = [
   { label: "Partnership", href: "#partnerships" },
   { label: "Awards", href: "#awards" },
   { label: "Team", href: "#team" },
-  { label: "Challenges", href: "#challenges" },
 ];
 
 function Nav() {
@@ -3163,7 +3162,6 @@ export default function Index() {
       <Partnerships />
       <Awards />
       <Team />
-      <Challenges />
       <CTA />
       <Contact />
       <Footer />
