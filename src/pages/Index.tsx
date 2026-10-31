@@ -194,7 +194,8 @@ function Nav() {
               <img
                 src={logo}
                 alt="Health Intelligence Technologies Inc."
-className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"              />
+                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+              />
             </a>
             {/* Desktop links */}
             {/* ---------- Desktop Navigation ---------- */}
@@ -522,10 +523,12 @@ function HealthIntelligenceWearable() {
         {/* Responsive feature grid */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {features.map((feature) => (
-<article
-  key={feature.title}
-  className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7"
->              {/* Icon and heading on the same row */}
+            <article
+              key={feature.title}
+              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7"
+            >
+              {" "}
+              {/* Icon and heading on the same row */}
               <div className="flex min-h-[60px] items-center gap-4">
                 <div className="card-icon grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-all duration-300">
                   <feature.icon className="h-5 w-5" />
@@ -535,12 +538,10 @@ function HealthIntelligenceWearable() {
                   {feature.title}
                 </h4>
               </div>
-
               {/* Description below */}
               <p className="mt-5 text-sm leading-7 text-muted-foreground md:text-base">
                 {feature.body}
               </p>
-
               {/* Animated accent */}
               <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
             </article>
@@ -1099,48 +1100,43 @@ function GenixNGSPartnership() {
           </div>
         </div>  */}
 
-
-
         {/* Advanced analysis */}
-        
-<div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
 
-  {/* Left: Heading and description */}
-  <div className="lg:col-span-8">
-    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
+        <div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+          {/* Left: Heading and description */}
+          <div className="lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
               Advanced Analysis. Actionable Insights.
             </p>
             <br></br>
-    <h3 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
-      Bringing Intelligence to
-      <br className="hidden sm:block" />
-      Genomic Data.
-    </h3>
+            <h3 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
+              Bringing Intelligence to
+              <br className="hidden sm:block" />
+              Genomic Data.
+            </h3>
 
-    <div className="mt-5 max-w-3xl space-y-5 text-base leading-7 text-slate-600 sm:text-lg">
-      <p>
-        Genix NGS Analyses brings AI-powered analytical capabilities to
-        genomic data workflows, supporting the transformation of complex
-        sequencing data into structured analytical outputs and insights.
-      </p>
+            <div className="mt-5 max-w-3xl space-y-5 text-base leading-7 text-slate-600 sm:text-lg">
+              <p>
+                Genix NGS Analyses brings AI-powered analytical capabilities to
+                genomic data workflows, supporting the transformation of complex
+                sequencing data into structured analytical outputs and insights.
+              </p>
 
-      <p>
-        The platform represents a complementary offering within Trust AI's
-        broader healthcare technology and innovation ecosystem.
-      </p>
-    </div>
-  </div>
+              <p>
+                The platform represents a complementary offering within Trust
+                AI's broader healthcare technology and innovation ecosystem.
+              </p>
+            </div>
+          </div>
 
-  {/* Right: CTA button */}
-  <div className="flex items-center justify-start lg:col-span-4 lg:justify-end">
-    <a href="#contact" className="btn-primary whitespace-nowrap">
-      Enquire About Genix NGS Analyses
-      <ChevronRight className="h-4 w-4" />
-    </a>
-  </div>
-
-</div>
-
+          {/* Right: CTA button */}
+          <div className="flex items-center justify-start lg:col-span-4 lg:justify-end">
+            <a href="#contact" className="btn-primary whitespace-nowrap">
+              Enquire About Genix NGS Analyses
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
 
         {/* Independence clarification */}
         <div className="mt-14 flex gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
@@ -2825,7 +2821,7 @@ const OFFICES = [
   {
     tag: "Trust Office",
     city: "Coppell, TX, USA",
-    address: "529 Abbey Ct, Coppell, TX 75019, USA" ,
+    address: "529 Abbey Ct, Coppell, TX 75019, USA",
   },
   {
     tag: "Trust Office",
@@ -2883,76 +2879,73 @@ function Contact() {
 
         <div className="mt-14 space-y-8">
           {/* Office cards */}
-          
-{/* Office cards */}
-<div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-  {OFFICES.map((o, i) => (
-    <div
-      key={o.address}
-      className="reveal glass-dark group flex h-full flex-col rounded-2xl p-6 transition-all duration-300 hover:border-teal/40"
-      style={{ transitionDelay: `${i * 80}ms` }}
-    >
-      {/* Office heading */}
-      <div className="flex items-center justify-between">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-teal">
-          {o.tag}
-        </span>
-        <div className="grid h-9 w-9 place-items-center rounded-full bg-grad-ocean">
-          <MapPin className="h-4 w-4 text-white" />
-        </div>
-      </div>
 
-      {/* City and address */}
-      <div className="mt-5 text-xl font-semibold">{o.city}</div>
+          {/* Office cards */}
+          <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {OFFICES.map((o, i) => (
+              <div
+                key={o.address}
+                className="reveal glass-dark group flex h-full flex-col rounded-2xl p-6 transition-all duration-300 hover:border-teal/40"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                {/* Office heading */}
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-teal">
+                    {o.tag}
+                  </span>
+                  <div className="grid h-9 w-9 place-items-center rounded-full bg-grad-ocean">
+                    <MapPin className="h-4 w-4 text-white" />
+                  </div>
+                </div>
 
-      <p className="mt-2 min-h-[64px] text-sm leading-relaxed text-white/70">
-        {o.address}
-      </p>
+                {/* City and address */}
+                <div className="mt-5 text-xl font-semibold">{o.city}</div>
 
-      {/* Map preview - same position and height in every card */}
-      <a
-        href={mapsUrl(o.address)}
-        target="_blank"
-        rel="noreferrer"
-        className="relative mt-4 block aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-black/40"
-        aria-label={`Open ${o.city} on Google Maps`}
-      >
-        <iframe
-          title={`Map of ${o.city}`}
-          src={`https://www.google.com/maps?q=${encodeURIComponent(o.address)}&output=embed`}
-          className="pointer-events-none absolute inset-0 h-full w-full grayscale-[40%] transition-all group-hover:grayscale-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </a>
+                <p className="mt-2 min-h-[64px] text-sm leading-relaxed text-white/70">
+                  {o.address}
+                </p>
 
-      {/* Buttons */}
-      <div className="mt-5 flex gap-2">
-        <a
-          href={dirUrl(o.address)}
-          target="_blank"
-          rel="noreferrer"
-          className="btn-primary flex-1 justify-center !py-2.5 !text-xs"
-        >
-          <Navigation className="h-4 w-4" />
-          Directions
-        </a>
+                {/* Map preview - same position and height in every card */}
+                <a
+                  href={mapsUrl(o.address)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative mt-4 block aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-black/40"
+                  aria-label={`Open ${o.city} on Google Maps`}
+                >
+                  <iframe
+                    title={`Map of ${o.city}`}
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(o.address)}&output=embed`}
+                    className="pointer-events-none absolute inset-0 h-full w-full grayscale-[40%] transition-all group-hover:grayscale-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </a>
 
-        
-<a
-  href={mapsUrl(o.address)}
-  target="_blank"
-  rel="noreferrer"
-  className="btn-ghost flex-1 justify-center !py-2.5 !text-xs !text-slate-700 !border-slate-300 !bg-slate-50 hover:!text-teal hover:!border-teal hover:!bg-teal/5"
->
-  View Map
-</a>
+                {/* Buttons */}
+                <div className="mt-5 flex gap-2">
+                  <a
+                    href={dirUrl(o.address)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary flex-1 justify-center !py-2.5 !text-xs"
+                  >
+                    <Navigation className="h-4 w-4" />
+                    Directions
+                  </a>
 
-      </div>
-    </div>
-  ))}
-</div>
-
+                  <a
+                    href={mapsUrl(o.address)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-ghost flex-1 justify-center !py-2.5 !text-xs !text-slate-700 !border-slate-300 !bg-slate-50 hover:!text-teal hover:!border-teal hover:!bg-teal/5"
+                  >
+                    View Map
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
 
           {/* Contact Information */}
 
@@ -3145,20 +3138,17 @@ function CTA() {
         </p>
         <div className="reveal mt-10 flex flex-wrap justify-center gap-3">
           {/* Request a Pilot */}
-<a
-  href="#contact"
-  className="btn-primary"
->
-  Request a Pilot
-  <ChevronRight size={18} />
-</a>
+          <a href="#contact" className="btn-primary">
+            Request a Pilot
+            <ChevronRight size={18} />
+          </a>
 
-{/* Schedule a Demo */}
-<a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@trust.health&su=Schedule%20a%20Demo"
+          {/* Schedule a Demo */}
+          <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=agnelo%40trustdtx.ai&su=Schedule%20a%20Demo"
   target="_blank"
   rel="noopener noreferrer"
-  className="btn-ghost"
+  className="btn-ghost justify-center !border-slate-300 !bg-white !text-slate-900 transition-colors hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
 >
   Schedule a Demo
 </a>
@@ -3181,7 +3171,7 @@ function Footer() {
           <div>
             <div className="text-xs">
               Trust AI develops health intelligence technology for connected
-              care, 
+              care,
               <br />
               longitudinal monitoring and personalised digital health
               applications.{" "}
