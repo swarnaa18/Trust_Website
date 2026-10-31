@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "@/assets/trust/HIT Logo.jpeg";
+import logo from "@/assets/trust/Logo HIT.png";
 import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
 import elderCareVideo from "@/assets/trust/Trust ElderCareWearable.mp4";
@@ -194,8 +194,7 @@ function Nav() {
               <img
                 src={logo}
                 alt="Health Intelligence Technologies Inc."
-                className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
-              />
+className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"              />
             </a>
             {/* Desktop links */}
             {/* ---------- Desktop Navigation ---------- */}
@@ -1098,63 +1097,48 @@ function GenixNGSPartnership() {
           </div>
         </div>  */}
 
+
+
         {/* Advanced analysis */}
-        <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
-          <div className="lg:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
+        
+<div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+
+  {/* Left: Heading and description */}
+  <div className="lg:col-span-8">
+    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
               Advanced Analysis. Actionable Insights.
             </p>
+            <br></br>
+    <h3 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
+      Bringing Intelligence to
+      <br className="hidden sm:block" />
+      Genomic Data.
+    </h3>
 
-            <h3 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
-              Bringing Intelligence to Genomic Data.
-            </h3>
+    <div className="mt-5 max-w-3xl space-y-5 text-base leading-7 text-slate-600 sm:text-lg">
+      <p>
+        Genix NGS Analyses brings AI-powered analytical capabilities to
+        genomic data workflows, supporting the transformation of complex
+        sequencing data into structured analytical outputs and insights.
+      </p>
 
-            <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base">
-              Genix NGS Analyses brings AI-powered analytical capabilities to
-              genomic data workflows, supporting the transformation of complex
-              sequencing data into structured analytical outputs and insights.
-            </p>
+      <p>
+        The platform represents a complementary offering within Trust AI's
+        broader healthcare technology and innovation ecosystem.
+      </p>
+    </div>
+  </div>
 
-            <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base">
-              The platform represents a complementary offering within Trust
-              AI&apos;s broader healthcare technology and innovation ecosystem.
-            </p>
+  {/* Right: CTA button */}
+  <div className="flex items-center justify-start lg:col-span-4 lg:justify-end">
+    <a href="#contact" className="btn-primary whitespace-nowrap">
+      Enquire About Genix NGS Analyses
+      <ChevronRight className="h-4 w-4" />
+    </a>
+  </div>
 
-            <a
-              href="#contact"
-              className="btn-primary mt-8 inline-flex items-center justify-center gap-2"
-            >
-              Enquire About Genix NGS Analyses
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
+</div>
 
-          {/* Capability cards */}
-          {/* <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2">
-            {capabilities.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <article
-                  key={item.title}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-white/[0.07]"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal/10 group-hover:text-teal">
-                    <Icon className="h-5 w-5" />
-                  </div>
-
-                  <h4 className="mt-5 text-lg font-semibold text-white">
-                    {item.title}
-                  </h4>
-
-                  <p className="mt-3 text-sm leading-7 text-white/65">
-                    {item.description}
-                  </p>
-                </article>
-              );
-            })}
-          </div> */}
-        </div>
 
         {/* Independence clarification */}
         <div className="mt-14 flex gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
