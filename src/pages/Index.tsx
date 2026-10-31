@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/trust/HIT Logo.jpeg";
 import wearableOverview from "@/assets/trust/wearable-overview.png";
 import wearableVideo from "@/assets/trust/wearable.mp4";
-import elderCareVideo from "@/assets/trust/elder-care.mp4";
+import elderCareVideo from "@/assets/trust/Trust ElderCareWearable.mp4";
 import enterpriseVideo from "@/assets/trust/enterprise.mp4";
 import hilBridgeVideo from "@/assets/trust/HIL-Bridge.mp4";
 import autismVideo from "@/assets/trust/English Autism.mp4";
@@ -1006,7 +1006,64 @@ function GenixNGSPartnership() {
 
       <div className="container-trust relative z-10">
         {/* Partnership heading */}
-        <div className="max-w-4xl">
+
+{/* Partnership introduction + Genix NGS Video */}
+<div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+
+  {/* Left: Partnership content */}
+  <div className="lg:col-span-5">
+    <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+      <Globe2 className="h-4 w-4" />
+      Global Partnership
+    </div>
+
+    <h2 className="mt-6 text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
+      Genix NGS Analyses —{" "}
+      <span className="font-serif italic font-bold text-teal">
+        Global Partnership.
+      </span>
+    </h2>
+
+    <h3 className="mt-7 text-xl font-semibold leading-snug text-white sm:text-2xl">
+      Advancing Genomic Data Analysis Through AI.
+    </h3>
+
+    <div className="mt-5 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
+      <p>
+        Trust AI is a Global Partner of Genix NGS Analyses, an
+        independent, AI-powered NGS Advanced Analysis
+        Software-as-a-Service (SaaS) platform from Genix.
+      </p>
+
+      <p>
+        The platform is focused on advanced analysis of next-generation
+        sequencing (NGS) data, helping make complex genomic datasets more
+        accessible for analytical interpretation and research workflows.
+      </p>
+    </div>
+  </div>
+
+  {/* Right: Genix video */}
+  <div className="lg:col-span-7">
+    <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
+      <video
+        src={genixVideo}
+        controls
+        playsInline
+        preload="metadata"
+        className="block aspect-video w-full bg-black object-contain"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+        {/*<div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
             <Globe2 className="h-4 w-4" />
             Global Partnership
@@ -1036,10 +1093,10 @@ function GenixNGSPartnership() {
               accessible for analytical interpretation and research workflows.
             </p>
           </div>
-        </div>
+        </div>*/}
 
         {/* Genix NGS Video */}
-        <div className="mt-12">
+       {/* <div className="mt-12">
           <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
             <video
               src={genixVideo}
@@ -1051,7 +1108,7 @@ function GenixNGSPartnership() {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </div>  */}
 
         {/* Advanced analysis */}
         <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
@@ -2483,7 +2540,7 @@ function Team() {
       role: "Chief Executive Officer (CEO)",
       img: Agnelo,
       bullets: [
-        "Leads Trust AI's vision, strategy, fundraising, partnerships, and commercialization, driving the development of evidence-based AI solutions that transform mental healthcare and addiction treatment.",
+        "Leads Trust AI's vision, strategy, fundraising, partnerships, and commercialization, driving the development of evidence-based AI solutions that transform healthcare treatment.",
       ],
     },
 
@@ -3094,7 +3151,7 @@ function CTA() {
           <span className="font-serif italic text-sunset">
             global intelligence layer
           </span>{" "}
-          for mental health.
+          for health.
         </h2>
         <p className="reveal mt-6 text-lg text-white/70">
           Request a pilot, schedule a demo, or partner with us on the future of
