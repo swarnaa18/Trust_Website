@@ -3145,13 +3145,13 @@ function CTA() {
 
           {/* Schedule a Demo */}
           <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=agnelo%40trustdtx.ai&su=Schedule%20a%20Demo"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn-ghost justify-center !border-slate-300 !bg-white !text-slate-900 transition-colors hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
->
-  Schedule a Demo
-</a>
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=agnelo%40trustdtx.ai&su=Schedule%20a%20Demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost justify-center !border-slate-300 !bg-white !text-slate-900 transition-colors hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
+          >
+            Schedule a Demo
+          </a>
         </div>
       </div>
     </section>
