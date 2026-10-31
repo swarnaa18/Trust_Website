@@ -2839,7 +2839,7 @@ const OFFICES = [
   {
     tag: "Trust Office",
     city: "Coppell, TX, USA",
-    address: "529 Abbey Ct, Coppell, TX 75019, USA",
+    address: "529 Abbey Ct, Coppell, TX 75019, USA" ,
   },
   {
     tag: "Trust Office",
@@ -2897,64 +2897,76 @@ function Contact() {
 
         <div className="mt-14 space-y-8">
           {/* Office cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {OFFICES.map((o, i) => (
-              <div
-                key={o.address}
-                className="reveal glass-dark rounded-2xl p-6 flex flex-col group hover:border-sunset/40 transition-all"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-sunset font-semibold">
-                    {o.tag}
-                  </span>
-                  <div className="h-9 w-9 rounded-full bg-grad-ocean grid place-items-center">
-                    <MapPin className="h-4 w-4 text-white" />
-                  </div>
-                </div>
-                <div className="mt-5 text-xl font-semibold">{o.city}</div>
-                <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                  {o.address}
-                </p>
+          
+{/* Office cards */}
+<div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {OFFICES.map((o, i) => (
+    <div
+      key={o.address}
+      className="reveal glass-dark group flex h-full flex-col rounded-2xl p-6 transition-all duration-300 hover:border-teal/40"
+      style={{ transitionDelay: `${i * 80}ms` }}
+    >
+      {/* Office heading */}
+      <div className="flex items-center justify-between">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-teal">
+          {o.tag}
+        </span>
+        <div className="grid h-9 w-9 place-items-center rounded-full bg-grad-ocean">
+          <MapPin className="h-4 w-4 text-white" />
+        </div>
+      </div>
 
-                {/* Mini map preview */}
-                <a
-                  href={mapsUrl(o.address)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 block rounded-xl overflow-hidden border border-white/10 aspect-[16/9] bg-black/40 relative"
-                  aria-label={`Open ${o.city} on Google Maps`}
-                >
-                  <iframe
-                    title={`Map of ${o.city}`}
-                    src={`https://www.google.com/maps?q=${encodeURIComponent(o.address)}&output=embed`}
-                    className="absolute inset-0 w-full h-full grayscale-[40%] group-hover:grayscale-0 transition-all pointer-events-none"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </a>
+      {/* City and address */}
+      <div className="mt-5 text-xl font-semibold">{o.city}</div>
 
-                <div className="mt-5 flex gap-2">
-                  <a
-                    href={dirUrl(o.address)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-primary flex-1 !py-2.5 !text-xs justify-center"
-                  >
-                    <Navigation className="h-4 w-4" /> Directions
-                  </a>
-                  <a
-                    href={mapsUrl(o.address)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-ghost !py-2.5 !text-xs !text-white !border-white/20 hover:!text-sunset hover:!border-sunset justify-center"
-                  >
-                    View Map
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+      <p className="mt-2 min-h-[64px] text-sm leading-relaxed text-white/70">
+        {o.address}
+      </p>
+
+      {/* Map preview - same position and height in every card */}
+      <a
+        href={mapsUrl(o.address)}
+        target="_blank"
+        rel="noreferrer"
+        className="relative mt-4 block aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-black/40"
+        aria-label={`Open ${o.city} on Google Maps`}
+      >
+        <iframe
+          title={`Map of ${o.city}`}
+          src={`https://www.google.com/maps?q=${encodeURIComponent(o.address)}&output=embed`}
+          className="pointer-events-none absolute inset-0 h-full w-full grayscale-[40%] transition-all group-hover:grayscale-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </a>
+
+      {/* Buttons */}
+      <div className="mt-5 flex gap-2">
+        <a
+          href={dirUrl(o.address)}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-primary flex-1 justify-center !py-2.5 !text-xs"
+        >
+          <Navigation className="h-4 w-4" />
+          Directions
+        </a>
+
+        
+<a
+  href={mapsUrl(o.address)}
+  target="_blank"
+  rel="noreferrer"
+  className="btn-ghost flex-1 justify-center !py-2.5 !text-xs !text-slate-700 !border-slate-300 !bg-slate-50 hover:!text-teal hover:!border-teal hover:!bg-teal/5"
+>
+  View Map
+</a>
+
+      </div>
+    </div>
+  ))}
+</div>
+
 
           {/* Contact Information */}
 
@@ -3150,11 +3162,11 @@ function CTA() {
             Request a Pilot <ChevronRight className="h-4 w-4" />
           </a>
           <a
-            href="mailto:hello@trust.health"
-            className="btn-ghost !text-white !border-white/20 hover:!text-sunset hover:!border-sunset"
-          >
-            Schedule a Demo
-          </a>
+  href="mailto:hello@trust.health"
+  className="btn-ghost inline-flex items-center justify-center rounded-full !border-slate-300 !bg-white !text-slate-900 px-8 py-4 text-sm font-semibold shadow-sm transition-all duration-300 hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
+>
+  Schedule a Demo
+</a>
         </div>
       </div>
     </section>
@@ -3174,7 +3186,9 @@ function Footer() {
           <div>
             <div className="text-xs">
               Trust AI develops health intelligence technology for connected
-              care, longitudinal monitoring and personalised digital health
+              care, 
+              <br />
+              longitudinal monitoring and personalised digital health
               applications.{" "}
             </div>
           </div>

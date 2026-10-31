@@ -747,3 +747,26 @@ textarea::placeholder {
   color: #172033 !important;
   border-color: #e2e8f0 !important;
 }
+/* Contact form — improve text visibility on white background */
+
+#contact input,
+#contact textarea,
+#contact select {
+  color: #172033 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
+  border-color: #14a99b !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(20, 169, 155, 0.12);
+}
