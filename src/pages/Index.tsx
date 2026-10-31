@@ -7,11 +7,9 @@ import enterpriseVideo from "@/assets/trust/enterprise.mp4";
 import hilBridgeVideo from "@/assets/trust/HIL-Bridge.mp4";
 import autismVideo from "@/assets/trust/English Autism.mp4";
 import brainVault from "@/assets/trust/brain-vault.jpg";
-// import agneloImg from "@/assets/trust/agnelo.jpg";
 import alvinImg from "@/assets/trust/alvin.jpg";
 import vijayImg from "@/assets/trust/vijayanand.jpg";
 import sureshImg from "@/assets/trust/suresh.jpeg";
-// import trustBanner from "@/assets/trust/trust-banner.png";
 import trustDemoVideo from "@/assets/trust/Trust demo video.mp4";
 import partnershipImg from "@/assets/trust/partnership.jpeg";
 import Agnelo from "@/assets/trust/Agnelo.png";
@@ -24,6 +22,7 @@ import awardsImg from "@/assets/trust/award1.png";
 import awardsImg2 from "@/assets/trust/award2.png";
 import awardsImg3 from "@/assets/trust/award3.jpeg";
 import wearable2 from "@/assets/trust/wearable_2.mp4";
+import genixVideo from "@/assets/trust/Genix.mp4";
 import {
   Activity,
   AlertTriangle,
@@ -51,8 +50,8 @@ import {
   Handshake,
   Presentation,
   House,
-HeartHandshake,
-ClipboardCheck,
+  HeartHandshake,
+  ClipboardCheck,
   // LifeBuoy,
   // MousePointer2,
   Navigation,
@@ -93,17 +92,16 @@ function useReveal() {
 }
 
 /* ---------- Nav ---------- */
-
-const NAV = [
-   { label: "Home", href: "#top" },
+const links = [
+  { label: "Home", href: "#top" },
   { label: "Health Intelligence", href: "#health-intelligence-wearable" },
-  { label: "Elder Care", href: "#elder-care" },
-  { label: "Health Intelligence Layer", href: "#health-intelligence-layer" },
+  { label: "Eldercare", href: "#elder-care" },
   { label: "Genix NGS", href: "#genix-ngs" },
-
-  { label: "Incubations & Partnerships", href: "#partnerships" },
+  { label: "Clinical Applications", href: "#clinical-applications" },
+  { label: "Partnership", href: "#partnerships" },
   { label: "Awards", href: "#awards" },
   { label: "Team", href: "#team" },
+  { label: "Challenges", href: "#challenges" },
 ];
 
 function Nav() {
@@ -158,16 +156,6 @@ function Nav() {
     };
   }, []);
 
-  const links = [
-    { label: "Home", href: "#top" },
-    { label: "Health Intelligence", href: "#health-intelligence-wearable" },
-    { label: "Elder Care", href: "#elder-care" },
-    { label: "Partnerships", href: "#partnerships" },
-    { label: "Awards", href: "#awards" },
-    { label: "Team", href: "#team" },
-    { label: "Challenges", href: "#challenges" },
-  ];
-
   return (
     <>
       {!visible && (
@@ -195,7 +183,8 @@ function Nav() {
             <div className="nav-light-sweep h-full w-1/3 bg-gradient-to-r from-transparent via-teal to-transparent" />
           </div>
 
-          <div className="mx-auto flex min-h-[78px] max-w-[1700px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-10">
+          <div className="mx-auto flex min-h-[78px] max-w-[1700px] flex-wrap items-center justify-between gap-3 px-5 py-3 sm:px-8 lg:px-10">
+            {" "}
             {/* Logo */}
             <a
               href="#top"
@@ -209,32 +198,23 @@ function Nav() {
                 className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
               />
             </a>
-
             {/* Desktop links */}
+            {/* ---------- Desktop Navigation ---------- */}
+            {/* Desktop Navigation - Single Row */}
             <nav
               aria-label="Main navigation"
-              className="hidden xl:flex flex-1 items-center justify-center gap-1"
+              className="hidden xl:flex flex-1 min-w-0 flex-nowrap items-center justify-center gap-0"
             >
               {links.map((item, index) => (
                 <a
-                  key={item.label}
+                  key={item.href}
                   href={item.href}
-                  style={{ animationDelay: `${index * 70}ms` }}
-                  className="nav-word-link group relative whitespace-nowrap px-3 py-3 text-[13px] font-medium text-white/65 transition-colors duration-300 hover:text-white"
+                  className="nav-word-link whitespace-nowrap px-2.5 py-3 text-[13px] font-semibold text-white/75 transition-colors duration-300 hover:text-white 2xl:px-3 2xl:text-sm"
                 >
-                  <span className="relative z-10 transition-all duration-300 group-hover:text-teal">
-                    {item.label}
-                  </span>
-
-                  {/* Animated underline */}
-                  <span className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-gradient-to-r from-teal to-cyan-300 transition-transform duration-300 group-hover:scale-x-100" />
-
-                  {/* Hover glow */}
-                  <span className="absolute inset-1 rounded-lg bg-teal/0 blur-md transition-all duration-300 group-hover:bg-teal/[0.08]" />
+                  {item.label}
                 </a>
               ))}
             </nav>
-
             {/* CTA */}
             <a
               href="#contact"
@@ -243,7 +223,6 @@ function Nav() {
               <span className="relative z-10">Let's Connect</span>
               <ChevronRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-
             {/* Mobile toggle */}
             <button
               type="button"
@@ -266,7 +245,7 @@ function Nav() {
               className="max-h-[75vh] overflow-y-auto border-t border-white/10 bg-[#07131D] px-5 py-4 sm:px-8 xl:hidden"
             >
               <div className="mx-auto grid max-w-2xl gap-1">
-                {NAV.map((item, index) => (
+                {links.map((item, index) => (
                   <a
                     key={`${item.label}-${index}`}
                     href={item.href}
@@ -312,11 +291,11 @@ function VideoShowcase() {
           {/* Left: Headline and content */}
           <div className="min-w-0 lg:col-span-6">
             <h1 className="text-[clamp(2rem,4.2vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
-  <span className="block">Health Intelligence.</span>
-  <span className="mt-1 block font-serif italic font-bold text-teal">
-    For Better Care, Every Day.
-  </span>
-</h1>
+              <span className="block">Health Intelligence.</span>
+              <span className="mt-1 block font-serif italic font-bold text-teal">
+                For Better Care, Every Day.
+              </span>
+            </h1>
 
             <h2 className="mt-6 max-w-xl text-lg font-semibold leading-snug text-white sm:text-xl lg:text-2xl">
               Intelligence that connects health, safety and care.
@@ -478,7 +457,7 @@ function HealthIntelligenceWearable() {
   return (
     <section
       id="health-intelligence-wearable"
-  className="relative overflow-hidden bg-background pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
+      className="relative overflow-hidden bg-background pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
     >
       {/* Subtle brand accents */}
       <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-teal/[0.06] blur-3xl" />
@@ -488,44 +467,50 @@ function HealthIntelligenceWearable() {
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <div className="eyebrow mb-4">
-  <Activity className="h-3.5 w-3.5" />
-  Health Intelligence Wearable
-</div>
+              <Activity className="h-3.5 w-3.5" />
+              Health Intelligence Wearable
+            </div>
 
             <h2 className="text-[clamp(2rem,4.2vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
-  <span className="block">Moving Healthcare Beyond</span>
-  <span className="block font-serif italic font-bold text-teal">
-    Episodic Observation.
-  </span>
-</h2>
+              <span className="block">Moving Healthcare Beyond</span>
+              <span className="block font-serif italic font-bold text-teal">
+                Episodic Observation.
+              </span>
+            </h2>
           </div>
         </div>
 
         {/* Introductory content */}
-        <div className="mt-8 grid gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-6">
-            <p className="text-base leading-8 text-muted-foreground md:text-lg">
-              Healthcare often relies on periodic assessments and observations
-              at specific points in time. Yet an individual's wellbeing can
-              change between appointments, during recovery or throughout daily
-              life.
-            </p>
-          </div>
+        
+{/* Health Intelligence introduction */}
+<div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
 
-          <div className="lg:col-span-6">
-            <p className="text-base leading-8 text-muted-foreground md:text-lg">
-              Trust AI is developing an integrated Health Intelligence Wearable
-              and AI-powered intelligence layer to help bridge this gap.
-            </p>
+  {/* Left column: First and second paragraphs */}
+  <div className="space-y-5">
+    <p className="text-base leading-8 text-muted-foreground md:text-lg">
+      Healthcare often relies on periodic assessments and observations at
+      specific points in time. Yet an individual's wellbeing can change
+      between appointments, during recovery or throughout daily life.
+    </p>
 
-            <p className="mt-4 text-base leading-8 text-muted-foreground md:text-lg">
-              Designed for connected care environments, the platform combines
-              wearable sensing, continuous data collection, AI-driven analysis
-              and digital dashboards to support a more comprehensive
-              understanding of individual health and safety.
-            </p>
-          </div>
-        </div>
+    <p className="text-base leading-8 text-muted-foreground md:text-lg">
+      Trust AI is developing an integrated Health Intelligence Wearable and
+      AI-powered intelligence layer to help bridge this gap.
+    </p>
+  </div>
+
+  {/* Right column: Third paragraph */}
+  <div>
+    <p className="text-base leading-8 text-muted-foreground md:text-lg">
+      Designed for connected care environments, the platform combines
+      wearable sensing, continuous data collection, AI-driven analysis and
+      digital dashboards to support a more comprehensive understanding of
+      individual health and safety.
+    </p>
+  </div>
+
+</div>
+
 
         {/* Feature heading */}
         <div className="mt-16 border-t border-border pt-10 md:mt-20 md:pt-12">
@@ -543,30 +528,26 @@ function HealthIntelligenceWearable() {
         {/* Responsive feature grid */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {features.map((feature) => (
-            
-<article
-  className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7"
->
-  {/* Icon and heading on the same row */}
-  <div className="flex min-h-[60px] items-center gap-4">
-    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
-      <feature.icon className="h-5 w-5" />
-    </div>
+            <article className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7">
+              {/* Icon and heading on the same row */}
+              <div className="flex min-h-[60px] items-center gap-4">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                  <feature.icon className="h-5 w-5" />
+                </div>
 
-    <h4 className="min-w-0 text-lg font-semibold leading-snug md:text-xl">
-      {feature.title}
-    </h4>
-  </div>
+                <h4 className="min-w-0 text-lg font-semibold leading-snug md:text-xl">
+                  {feature.title}
+                </h4>
+              </div>
 
-  {/* Description below */}
-  <p className="mt-5 text-sm leading-7 text-muted-foreground md:text-base">
-    {feature.body}
-  </p>
+              {/* Description below */}
+              <p className="mt-5 text-sm leading-7 text-muted-foreground md:text-base">
+                {feature.body}
+              </p>
 
-  {/* Animated accent */}
-  <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
-</article>
-
+              {/* Animated accent */}
+              <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
+            </article>
           ))}
         </div>
       </div>
@@ -582,37 +563,37 @@ function ElderCare() {
       icon: HeartPulse,
       title: "Senior Living and Assisted Care",
       description:
-        "Support care teams in assisted living and senior care environments with continuous health monitoring, safety awareness and access to relevant health information.",
+        "Support resident safety and give care teams access to relevant monitoring information and alerts within their workflows.",
     },
     {
       icon: House,
       title: "Home-Based Care",
       description:
-        "Extend care beyond clinical settings by helping older adults remain connected to caregivers while supporting safer, more independent living at home.",
+        "Extend supported monitoring beyond clinical facilities, helping caregivers stay connected to individuals in their daily environments.",
     },
     {
       icon: Activity,
       title: "Post-Hospital Recovery",
       description:
-        "Support recovery after hospital discharge through ongoing health observation and access to meaningful information that can help care teams understand changes over time.",
+        "Support longitudinal observation following discharge, helping care teams review relevant changes and coordinate follow-up.",
     },
     {
       icon: HeartHandshake,
       title: "Rehabilitation and Longitudinal Care",
       description:
-        "Enable a more connected view of recovery and wellbeing by bringing health observations together over time to support follow-up and personalised care.",
+        "Complement recovery programmes with ongoing information about activity, wellbeing and relevant health patterns.",
     },
     {
       icon: Users,
       title: "Caregiver and Family Connectivity",
       description:
-        "Help connect older adults, family members and care providers through a more coordinated approach to monitoring, communication and care support.",
+        "Enable appropriate visibility into supported alerts and monitoring information, helping caregivers remain informed without replacing human care.",
     },
     {
       icon: ClipboardCheck,
       title: "Clinical and Operational Oversight",
       description:
-        "Provide care organisations with a foundation for reviewing relevant health information and supporting more informed care coordination and operational workflows.",
+        "Provide dashboards that help clinicians and care organisations review information, identify areas requiring attention and support follow-up decisions.",
     },
   ];
 
@@ -634,95 +615,103 @@ function ElderCare() {
 
       <div className="container-trust relative z-10">
         {/* Section introduction */}
-        <div className="mx-auto max-w-4xl text-center">
+
+{/* Elder Care introduction + video */}
+<div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+
+  {/* Left: Elder Care content */}
+  <div className="lg:col-span-5">
+    <p className="eyebrow text-teal">
+      Elder Care &amp; Healthcare Monitoring
+    </p>
+
+    <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[42px]">
+      Enabling More Connected,{" "}
+      <span className="font-serif italic text-teal">
+        Proactive Care
+      </span>{" "}
+      for Older Adults.
+    </h2>
+
+    <div className="mt-6 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
+      <p>
+        As populations age and care increasingly extends beyond hospital
+        walls, healthcare organisations need better ways to understand
+        changes in wellbeing, support safety and maintain continuity
+        between clinical encounters.
+      </p>
+
+      <p>
+        Trust AI's Health Intelligence Wearable is designed to support
+        elder care across assisted living, home care, rehabilitation and
+        post-hospital recovery environments.
+      </p>
+
+      <p>
+        By combining wearable sensing, cellular connectivity, safety
+        features and longitudinal health intelligence, the platform helps
+        care teams move towards a more continuous and connected approach
+        to monitoring.
+      </p>
+    </div>
+  </div>
+
+  {/* Right: Elder Care video */}
+  <div className="lg:col-span-7">
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] bg-teal/[0.10] blur-2xl" />
+
+      <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:rounded-3xl">
+        <video
+          src={elderCareVideo}
+          controls
+          playsInline
+          preload="metadata"
+className="block aspect-video w-full bg-black object-cover"        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+        {/* <div className="mx-auto max-w-4xl text-center">
           <p className="eyebrow text-teal">
             Elder Care &amp; Healthcare Monitoring
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             Enabling More Connected,{" "}
-            <span className="font-serif italic text-teal">
-              Proactive Care
-            </span>{" "}
+            <span className="font-serif italic text-teal">Proactive Care</span>{" "}
             for Older Adults.
           </h2>
 
           <div className="mx-auto mt-6 max-w-3xl space-y-4 text-sm leading-7 text-white/70 sm:text-base">
             <p>
-              As populations age and care extends beyond hospital walls,
-              healthcare providers need more connected ways to understand
-              wellbeing, support safety and coordinate ongoing care.
+              As populations age and care increasingly extends beyond hospital
+              walls, healthcare organisations need better ways to understand
+              changes in wellbeing, support safety and maintain continuity
+              between clinical encounters.
             </p>
 
             <p>
-              Trust AI&apos;s Health Intelligence Wearable supports elder care
-              across assisted living, home care, rehabilitation and
-              post-hospital recovery.
+              Trust AI's Health Intelligence Wearable is designed to support
+              elder care across assisted living, home care, rehabilitation and
+              post-hospital recovery environments.
             </p>
 
             <p>
               By combining wearable sensing, cellular connectivity, safety
-              features and longitudinal health intelligence, the platform
-              aims to help connect older adults, caregivers and healthcare
-              teams through a more continuous view of care.
+              features and longitudinal health intelligence, the platform helps
+              care teams move towards a more continuous and connected approach
+              to monitoring.
             </p>
           </div>
-        </div>
+        </div> */}
 
-        {/* Elder care video */}
-        <div className="mt-12 sm:mt-16">
-          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
-            {/* Video description */}
-            <div className="lg:col-span-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-                Connected Elder Care
-              </p>
-
-              <h3 className="mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
-                Technology designed for{" "}
-                <span className="font-serif italic text-teal">
-                  safer, more connected care.
-                </span>
-              </h3>
-
-              <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base">
-                Explore how the Health Intelligence Wearable can support
-                monitoring, safety and connected care across home-based and
-                assisted living environments.
-              </p>
-
-              <p className="mt-4 text-sm leading-7 text-white/60">
-                Designed to help bridge the gap between everyday health
-                observation and more coordinated care, the platform can
-                support a connected approach for older adults, families and
-                healthcare providers.
-              </p>
-
-              <a
-                href="#contact"
-                className="btn-primary mt-7 inline-flex items-center gap-2"
-              >
-                Discuss Elder Care Solutions
-                <ChevronRight className="h-4 w-4" />
-              </a>
-            </div>
-
-            {/* Video player */}
-<div className="lg:col-span-7">
-  <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-xl">
-    <video
-      src={elderCareVideo}
-      controls
-      playsInline
-      preload="metadata"
-      className="block aspect-video w-full bg-black object-contain"
-    >
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
-          </div>
-        </div>
+        
 
         {/* Elder care applications */}
         <div className="mt-16 sm:mt-20">
@@ -732,14 +721,8 @@ function ElderCare() {
             </p>
 
             <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Supporting Care Across Every Stage.
+              Designed Around Real-World Care Needs
             </h3>
-
-            <p className="mt-4 text-sm leading-7 text-white/65 sm:text-base">
-              A connected healthcare approach that can support different
-              elder care environments, from everyday living to recovery and
-              ongoing clinical support.
-            </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -778,15 +761,16 @@ function ElderCare() {
                 From Monitoring to Meaningful Intelligence
               </p>
 
-              <h3 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
-                Building a More Connected Future for Elder Care.
-              </h3>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+                The objective is not simply to collect more data. It is to make
+                longitudinal information more useful to the people responsible
+                for care.{" "}
+              </p>
 
               <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
-                Trust AI brings together wearable technology, connectivity
-                and health intelligence to help care organisations explore
-                more continuous and coordinated approaches to supporting
-                older adults.
+                Trust AI's approach brings together sensing, analytics, safety
+                and digital engagement in a connected platform designed to
+                complement established clinical and caregiving workflows.
               </p>
             </div>
 
@@ -892,10 +876,10 @@ function HealthIntelligenceLayer() {
             </p>
 
             <p>
-              Trust AI&apos;s Health Intelligence Layer is designed to
-              process multimodal sensor data over time and translate relevant
-              signals into insights that can support personalised monitoring
-              and care workflows.
+              Trust AI&apos;s Health Intelligence Layer is designed to process
+              multimodal sensor data over time and translate relevant signals
+              into insights that can support personalised monitoring and care
+              workflows.
             </p>
           </div>
         </div>
@@ -912,17 +896,17 @@ function HealthIntelligenceLayer() {
             </h3>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((item) => {
               const Icon = item.icon;
 
               return (
                 <article
                   key={item.title}
-                  className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)]"
+                  className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 sm:p-8"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal">
                       <Icon className="h-5 w-5" />
                     </div>
 
@@ -930,12 +914,6 @@ function HealthIntelligenceLayer() {
                       {item.title}
                     </h4>
                   </div>
-
-                  <p className="mt-5 text-sm leading-7 text-muted-foreground">
-                    {item.description}
-                  </p>
-
-                  <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
                 </article>
               );
             })}
@@ -978,15 +956,14 @@ function HealthIntelligenceLayer() {
 
           <p className="text-sm leading-7 text-muted-foreground">
             The platform is intended to complement clinical judgement and
-            existing care processes. Its outputs should be evaluated within
-            the relevant clinical context, with appropriate human oversight.
+            existing care processes. Its outputs should be evaluated within the
+            relevant clinical context, with appropriate human oversight.
           </p>
         </div>
       </div>
     </section>
   );
 }
-
 
 /* ---------- Genix NGS Global Partnership ---------- */
 
@@ -1055,11 +1032,25 @@ function GenixNGSPartnership() {
             </p>
 
             <p>
-              The platform is focused on advanced analysis of
-              next-generation sequencing (NGS) data, helping make complex
-              genomic datasets more accessible for analytical interpretation
-              and research workflows.
+              The platform is focused on advanced analysis of next-generation
+              sequencing (NGS) data, helping make complex genomic datasets more
+              accessible for analytical interpretation and research workflows.
             </p>
+          </div>
+        </div>
+
+        {/* Genix NGS Video */}
+        <div className="mt-12">
+          <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
+            <video
+              src={genixVideo}
+              controls
+              playsInline
+              preload="metadata"
+              className="block aspect-video w-full bg-black object-contain"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
@@ -1076,15 +1067,13 @@ function GenixNGSPartnership() {
 
             <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base">
               Genix NGS Analyses brings AI-powered analytical capabilities to
-              genomic data workflows, supporting the transformation of
-              complex sequencing data into structured analytical outputs and
-              insights.
+              genomic data workflows, supporting the transformation of complex
+              sequencing data into structured analytical outputs and insights.
             </p>
 
             <p className="mt-5 text-sm leading-7 text-white/70 sm:text-base">
               The platform represents a complementary offering within Trust
-              AI&apos;s broader healthcare technology and innovation
-              ecosystem.
+              AI&apos;s broader healthcare technology and innovation ecosystem.
             </p>
 
             <a
@@ -1097,7 +1086,7 @@ function GenixNGSPartnership() {
           </div>
 
           {/* Capability cards */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2">
+          {/* <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2">
             {capabilities.map((item) => {
               const Icon = item.icon;
 
@@ -1120,7 +1109,7 @@ function GenixNGSPartnership() {
                 </article>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         {/* Independence clarification */}
@@ -1138,7 +1127,284 @@ function GenixNGSPartnership() {
   );
 }
 
+/* ---------- Clinical Applications ---------- */
 
+function ClinicalApplications() {
+  const applications = [
+    {
+      icon: Activity,
+      title: "Longitudinal Health Monitoring",
+      description:
+        "Support the collection and review of relevant health and activity-related signals over time, complementing established clinical assessments.",
+    },
+    {
+      icon: HeartPulse,
+      title: "Rehabilitation and Recovery",
+      description:
+        "Help care teams maintain visibility between encounters and support structured follow-up during recovery programmes.",
+    },
+    {
+      icon: Brain,
+      title: "Mental Wellness and Personalised Digital Support",
+      description:
+        "Combine personalised engagement and digital interventions with appropriate monitoring and care workflows to support ongoing therapeutic programmes.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Alcohol Use Disorder — Relapse Risk Research",
+      description:
+        "Trust AI has undertaken research into relapse-risk prediction for Alcohol Use Disorder (AUD), including a clinical pilot at St. John's Medical College & Hospital. This work explores how longitudinal wearable-derived signals and AI-based analysis may support research into relapse risk and personalised digital interventions. The application remains subject to the appropriate clinical evidence, validation and intended-use requirements. AI-based outputs are intended to complement, not replace, clinical assessment and professional care.",
+    },
+  ];
+
+  return (
+    <section
+      id="clinical-applications"
+      className="section relative overflow-hidden bg-background"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-10 h-96 w-96 rounded-full bg-teal/[0.06] blur-3xl"
+      />
+
+      <div className="container-trust relative z-10">
+        <div className="max-w-4xl">
+          <div className="eyebrow mb-4">
+            <Stethoscope className="h-3.5 w-3.5" />
+            Clinical Applications
+          </div>
+
+          <h2 className="text-[clamp(2rem,4.2vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
+            Technology Designed Around{" "}
+            <span className="font-serif italic font-bold text-teal">
+              Evolving Healthcare Needs.
+            </span>
+          </h2>
+
+          <p className="mt-7 max-w-3xl text-base leading-8 text-muted-foreground md:text-lg">
+            Trust AI&apos;s technology development spans continuous monitoring,
+            connected care and personalised digital support. Applications are
+            developed and evaluated according to their specific clinical
+            requirements and intended use.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {applications.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] sm:p-8"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold leading-snug sm:text-xl">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">
+                  {item.description}
+                </p>
+
+                <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Clinical Research & Innovation ---------- */
+
+function ClinicalResearchInnovation() {
+  const researchAreas = [
+    {
+      icon: Stethoscope,
+      title: "Clinical Collaboration",
+      description:
+        "A clinical pilot with St. John's Medical College & Hospital evaluated Trust AI's approach to relapse-risk prediction in Alcohol Use Disorder. The experience contributes to the company's wider work on wearable sensing and longitudinal health intelligence.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Proprietary Sensor Architecture",
+      description:
+        "Trust AI's multimodal sensor architecture is associated with Indian patent number 202311085117.",
+    },
+    {
+      icon: FlaskConical,
+      title: "Translational Research",
+      description:
+        "The company's research programme focuses on translating wearable-derived data and AI methods into practical digital health applications, with clinical validation and appropriate oversight guiding the path towards deployment.",
+    },
+    {
+      icon: HeartPulse,
+      title: "Responsible Health Intelligence",
+      description:
+        "We believe healthcare technology should be developed with attention to clinical context, data quality, privacy, intended use and the people who ultimately rely on it.",
+    },
+  ];
+
+  return (
+    <section
+      id="clinical-research"
+      className="section relative overflow-hidden bg-midnight text-white"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-teal/10 blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-blue/10 blur-3xl"
+      />
+
+      <div className="container-trust relative z-10">
+        <div className="max-w-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+            <FlaskConical className="h-4 w-4" />
+            Clinical Research & Innovation
+          </div>
+
+          <h2 className="mt-5 text-4xl lg:text-[52px] xl:text-[56px] font-semibold leading-tight tracking-tight whitespace-nowrap">
+            Research-Led.{" "}
+            <span className="font-serif italic text-teal">
+              Designed for Real-World Care.
+            </span>
+          </h2>
+
+          <p className="mt-7 max-w-3xl text-base leading-8 text-white/70 md:text-lg">
+            Trust AI&apos;s technology development is informed by a sustained
+            medical research programme and real-world clinical collaboration.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+          {researchAreas.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-white/[0.07] sm:p-8"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <p className="mt-5 text-sm leading-7 text-white/65 sm:text-base">
+                  {item.description}
+                </p>
+
+                <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Our Approach ---------- */
+
+function OurApproach() {
+  const principles = [
+    {
+      icon: Clock,
+      title: "Designed for continuity.",
+      description:
+        "Support a more connected view of wellbeing beyond individual appointments.",
+    },
+    {
+      icon: Building2,
+      title: "Built around real care environments.",
+      description:
+        "Develop technology for hospitals, senior living providers, home-care organisations and clinical partners.",
+    },
+    {
+      icon: HeartPulse,
+      title: "Personalised by design.",
+      description:
+        "Use longitudinal information to support more relevant monitoring and digital engagement.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Grounded in responsible innovation.",
+      description:
+        "Keep clinical judgement, appropriate validation and human oversight central to the application of AI in healthcare.",
+    },
+  ];
+
+  return (
+    <section
+      id="our-approach"
+      className="section relative overflow-hidden bg-background"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-teal/[0.06] blur-3xl"
+      />
+
+      <div className="container-trust relative z-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="eyebrow justify-center">
+            <Target className="h-3.5 w-3.5" />
+            Our Approach
+          </div>
+
+          <h2 className="mt-5 text-[clamp(2rem,4.2vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
+            Intelligence That{" "}
+            <span className="font-serif italic font-bold text-teal">
+              Complements Human Care.
+            </span>
+          </h2>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {principles.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] sm:p-7"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+
+                <h3 className="mt-6 text-lg font-semibold leading-snug">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  {item.description}
+                </p>
+
+                <div className="mt-6 h-px w-10 bg-teal/50 transition-all duration-300 group-hover:w-16 group-hover:bg-teal" />
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ---------- Crisis ---------- */
 // function Crisis() {
@@ -2565,7 +2831,8 @@ function Contact() {
       id="contact"
       className="section bg-midnight text-white relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,hsl(184_80%_38%/0.25),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(18_100%_60%/0.22),transparent_55%)]" />
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,hsl(184_80%_38%/0.25),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(18_100%_60%/0.22),transparent_55%)]" /> */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#07111F] via-[#0B1C30] to-[#073B4C]" />
       <div className="container-trust relative">
         <div className="max-w-3xl reveal">
           <div className="pill bg-white/10 border border-white/15 text-white">
@@ -2861,17 +3128,16 @@ function Footer() {
             className="h-14 w-auto object-contain"
           />{" "}
           <div>
-            <div className="font-semibold text-white tracking-[0.25em] text-sm">
-              TRUST
-            </div>
             <div className="text-xs">
-              Therapeutic Recovery Understanding Support Technology
+              Trust AI develops health intelligence technology for connected
+              care, longitudinal monitoring and personalised digital health
+              applications.{" "}
             </div>
           </div>
         </div>
         <div className="text-xs">
-          © {new Date().getFullYear()} TRUST. Better Mental Health, For
-          Everyone.
+          © {new Date().getFullYear()} TRUST. Health Intelligence. For Better
+          Care, Every Day.
         </div>
       </div>
     </footer>
@@ -2889,8 +3155,11 @@ export default function Index() {
       <VideoShowcase />
       <HealthIntelligenceWearable />
       <ElderCare />
-<HealthIntelligenceLayer />
-<GenixNGSPartnership />
+      <HealthIntelligenceLayer />
+      <GenixNGSPartnership />
+      <ClinicalApplications />
+      <ClinicalResearchInnovation />
+      <OurApproach />
       <Partnerships />
       <Awards />
       <Team />
