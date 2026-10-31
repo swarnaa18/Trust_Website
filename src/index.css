@@ -284,9 +284,9 @@
   }
 
   /* Standard content sections */
-  .section {
-    padding-block: clamp(3.5rem, 7vw, 6.5rem);
-  }
+ .section {
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+}
 
   .marquee-mask {
     mask-image: linear-gradient(
@@ -488,7 +488,7 @@ color: hsl(215 45% 15% / 0.85);
 /* Medium screens and tablets */
 @media (max-width: 1023px) {
   .section {
-    padding-block: 4rem;
+    padding-block: 3rem;
   }
 
   .trust-card {
@@ -499,7 +499,7 @@ color: hsl(215 45% 15% / 0.85);
 /* Phones */
 @media (max-width: 767px) {
   .section {
-    padding-block: 3.5rem;
+    padding-block: 2.5rem;
   }
 
   .btn-primary,
@@ -524,7 +524,7 @@ color: hsl(215 45% 15% / 0.85);
   }
 
   .section {
-    padding-block: 2.75rem;
+    padding-block: 2rem;
   }
 
   .pill {
@@ -769,4 +769,75 @@ textarea::placeholder {
   border-color: #14a99b !important;
   outline: none;
   box-shadow: 0 0 0 3px rgba(20, 169, 155, 0.12);
+}
+
+/* =========================================================
+   SECTION SPACING & VISUAL VARIATION
+   ========================================================= */
+
+.section {
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+  margin-block: 0;
+}
+
+/* Subtle alternate section background */
+.section-soft {
+  background: #f5f9fc !important;
+}
+
+/* Consistent card appearance */
+.trust-card {
+  background-color: #f8fafc;
+}
+
+/* Smooth section transitions */
+section {
+  transition: background-color 300ms ease;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .section {
+    padding-block: 2.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    padding-block: 2rem;
+  }
+}   
+
+/* Default section background */
+section {
+  background-color: #ffffff;
+}
+
+/* Alternate sections with a subtle blue-white shade */
+section:nth-of-type(even) {
+  background-color: #f6f9fc;
+}
+
+/* Keep cards clean and consistent */
+.trust-card {
+  background-color: #f8fafc;
+}
+
+/* Prevent unnecessary gaps between sections */
+section + section {
+  margin-top: 0;
+}
+
+/* Smooth visual transitions */
+section {
+  transition: background-color 300ms ease;
+}
+
+/* Mobile spacing */
+@media (max-width: 767px) {
+  section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }
