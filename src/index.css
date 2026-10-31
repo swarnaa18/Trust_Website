@@ -5,131 +5,122 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================
-   TRUST AI — HEALTH INTELLIGENCE BRAND SYSTEM
-   Palette: Midnight Navy · Healthcare Blue · Teal · Aqua
-   ========================================================= */
 
 @layer base {
-  :root {
-    --background: 210 40% 99%;
-    --foreground: 215 45% 10%;
+  
+:root {
+  color-scheme: light;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 45% 10%;
+  --background: 0 0% 100%;
+  --foreground: 215 45% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 45% 10%;
+  --card: 210 25% 98%;
+  --card-foreground: 215 45% 10%;
 
-    --primary: 205 85% 38%;
-    --primary-foreground: 0 0% 100%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 45% 10%;
 
-    --secondary: 205 30% 96%;
-    --secondary-foreground: 215 45% 15%;
+  --primary: 205 85% 38%;
+  --primary-foreground: 0 0% 100%;
 
-    --muted: 205 25% 96%;
-    --muted-foreground: 215 15% 43%;
+  --secondary: 210 30% 96%;
+  --secondary-foreground: 215 45% 15%;
 
-    --accent: 174 75% 34%;
-    --accent-foreground: 0 0% 100%;
+  --muted: 210 30% 96%;
+  --muted-foreground: 215 15% 43%;
 
-    --destructive: 0 75% 48%;
-    --destructive-foreground: 0 0% 100%;
+  --accent: 174 75% 34%;
+  --accent-foreground: 0 0% 100%;
 
-    --border: 215 25% 89%;
-    --input: 215 25% 89%;
-    --ring: 174 75% 38%;
+  --destructive: 0 75% 48%;
+  --destructive-foreground: 0 0% 100%;
 
-    --radius: 1rem;
+  --border: 215 25% 89%;
+  --input: 215 25% 89%;
+  --ring: 174 75% 38%;
 
-    /* Brand tokens */
-    --midnight: 215 55% 7%;
-    --midnight-2: 205 48% 13%;
-    --blue: 205 85% 43%;
-    --blue-light: 202 90% 57%;
-    --teal: 174 75% 38%;
-    --teal-glow: 174 85% 49%;
-    --aqua: 175 75% 70%;
+  --radius: 1rem;
 
-    /* Legacy token compatibility */
-    --sunset: 205 85% 43%;
-    --sunset-2: 174 75% 38%;
-    --gold: 195 65% 65%;
+  /* Brand colours */
+  --midnight: 0 0% 100%;
+  --midnight-2: 210 30% 97%;
+  --blue: 205 85% 43%;
+  --blue-light: 202 90% 57%;
+  --teal: 174 75% 38%;
+  --teal-glow: 174 85% 49%;
+  --aqua: 175 75% 70%;
 
-    /* Brand gradients */
-    --grad-hero:
-      radial-gradient(
-        circle at 18% 20%,
-        hsl(174 75% 38% / 0.16),
-        transparent 55%
-      ),
-      radial-gradient(
-        circle at 82% 25%,
-        hsl(205 85% 43% / 0.16),
-        transparent 55%
-      ),
-      linear-gradient(
-        140deg,
-        hsl(215 55% 7%),
-        hsl(205 48% 13%)
-      );
+  --sunset: 205 85% 43%;
+  --sunset-2: 174 75% 38%;
+  --gold: 195 65% 65%;
 
-    --grad-ocean: linear-gradient(
-      120deg,
-      hsl(205 85% 43%),
-      hsl(174 75% 38%)
-    );
+  /* Light background gradients */
+  --grad-hero:
+    radial-gradient(circle at 18% 20%, hsl(174 75% 38% / 0.06), transparent 55%),
+    radial-gradient(circle at 82% 25%, hsl(205 85% 43% / 0.06), transparent 55%),
+    linear-gradient(140deg, #ffffff, #f5f9fc);
 
-    --grad-sunset: linear-gradient(
-      120deg,
-      hsl(205 85% 43%),
-      hsl(174 75% 38%)
-    );
+  /* Preserve original button gradients */
+  --grad-ocean: linear-gradient(
+    120deg,
+    hsl(205 85% 43%),
+    hsl(174 75% 38%)
+  );
 
-    --grad-brand: linear-gradient(
-      110deg,
-      hsl(205 85% 43%) 0%,
-      hsl(174 75% 38%) 55%,
-      hsl(175 75% 70%) 100%
-    );
+  --grad-sunset: linear-gradient(
+    120deg,
+    hsl(205 85% 43%),
+    hsl(174 75% 38%)
+  );
 
-    --shadow-soft:
-      0 1px 3px hsl(215 55% 7% / 0.04),
-      0 12px 32px -12px hsl(215 55% 7% / 0.10);
+  --grad-brand: linear-gradient(
+    110deg,
+    hsl(205 85% 43%) 0%,
+    hsl(174 75% 38%) 55%,
+    hsl(175 75% 70%) 100%
+  );
 
-    --shadow-glow:
-      0 16px 48px -18px hsl(174 75% 38% / 0.30);
+  --shadow-soft:
+    0 1px 3px hsl(215 55% 7% / 0.04),
+    0 12px 32px -12px hsl(215 55% 7% / 0.10);
 
-    --shadow-sunset:
-      0 12px 32px -12px hsl(174 75% 38% / 0.22);
-  }
+  --shadow-glow:
+    0 16px 48px -18px hsl(174 75% 38% / 0.20);
 
-  .dark {
-    --background: 215 55% 6%;
-    --foreground: 210 40% 98%;
+  --shadow-sunset:
+    0 12px 32px -12px hsl(174 75% 38% / 0.22);
+}
 
-    --card: 215 45% 9%;
-    --card-foreground: 210 40% 98%;
+/* Force light theme even if the application adds .dark */
+.dark {
+  color-scheme: light;
 
-    --popover: 215 45% 9%;
-    --popover-foreground: 210 40% 98%;
+  --background: 0 0% 100%;
+  --foreground: 215 45% 10%;
 
-    --primary: 174 75% 48%;
-    --primary-foreground: 215 55% 7%;
+  --card: 210 25% 98%;
+  --card-foreground: 215 45% 10%;
 
-    --secondary: 215 35% 14%;
-    --secondary-foreground: 210 40% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 45% 10%;
 
-    --muted: 215 35% 14%;
-    --muted-foreground: 215 15% 70%;
+  --primary: 205 85% 38%;
+  --primary-foreground: 0 0% 100%;
 
-    --accent: 174 75% 45%;
-    --accent-foreground: 215 55% 7%;
+  --secondary: 210 30% 96%;
+  --secondary-foreground: 215 45% 15%;
 
-    --border: 215 35% 18%;
-    --input: 215 35% 18%;
-    --ring: 174 75% 48%;
-  }
+  --muted: 210 30% 96%;
+  --muted-foreground: 215 15% 43%;
+
+  --accent: 174 75% 34%;
+  --accent-foreground: 0 0% 100%;
+
+  --border: 215 25% 89%;
+  --input: 215 25% 89%;
+  --ring: 174 75% 38%;
+}
+
 
   * {
     @apply border-border;
@@ -216,12 +207,12 @@
   }
 
   /* Dark glass surface */
-  .glass-dark {
-    background: hsl(215 55% 7% / 0.72);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid hsl(0 0% 100% / 0.10);
-  }
+.glass-dark {
+  background: hsl(0 0% 100% / 0.90);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid hsl(215 25% 89%);
+}
 
   /* Cards */
   .trust-card {
@@ -314,12 +305,12 @@
 
 @layer utilities {
   .bg-midnight {
-    background: hsl(var(--midnight));
-  }
+  background: #ffffff;
+}
 
-  .bg-grad-hero {
-    background: var(--grad-hero);
-  }
+.bg-grad-hero {
+  background: var(--grad-hero);
+}
 
   .bg-grad-ocean {
     background: var(--grad-ocean);
@@ -428,7 +419,7 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  color: hsl(0 0% 100% / 0.72);
+color: hsl(215 45% 15% / 0.85);
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.2;
@@ -438,8 +429,7 @@
 }
 
 .nav-link:hover {
-  color: hsl(var(--aqua));
-  transform: translateY(-1px);
+  color: hsl(var(--teal));
 }
 
 .nav-link::after {
@@ -563,4 +553,197 @@
   .nav-link:hover {
     transform: none;
   }
+}
+
+
+/* =========================================================
+   TRUST AI — WEBSITE-WIDE LIGHT THEME
+   ========================================================= */
+
+/* Main page surfaces */
+html,
+body,
+#root {
+  background: #ffffff;
+  color: #172033;
+}
+
+/* Existing dark section backgrounds */
+.bg-midnight,
+.bg-midnight\/90,
+.bg-midnight\/80 {
+  background-color: #ffffff !important;
+  color: #172033;
+}
+
+/* Existing card surfaces */
+.bg-card,
+.bg-card\/60,
+.bg-card\/50 {
+  background-color: #f8fafc;
+}
+
+/* Dark glass surfaces */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #e2e8f0;
+}
+
+/* White text used for normal website content */
+.text-white,
+.text-white\/90,
+.text-white\/80,
+.text-white\/75,
+.text-white\/70,
+.text-white\/65,
+.text-white\/60 {
+  color: #172033 !important;
+}
+
+/* Preserve white text on gradient primary buttons */
+.btn-primary,
+.btn-primary *,
+.nav-cta.btn-primary {
+  color: #ffffff !important;
+}
+
+/* Light card borders */
+.border-white\/10,
+.border-white\/15,
+.border-white\/20 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Light backgrounds for existing card layouts */
+.bg-white\/\[0\.04\],
+.bg-white\/\[0\.05\],
+.bg-white\/\[0\.07\] {
+  background: #f8fafc !important;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  color: #172033;
+  border-color: #e2e8f0;
+}
+
+/* Navigation */
+.nav-link {
+  color: #172033;
+}
+
+.nav-link:hover {
+  color: hsl(var(--teal));
+}
+
+/* Inputs and text areas */
+input,
+textarea,
+select {
+  background-color: #ffffff;
+  color: #172033;
+  border-color: #cbd5e1;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+/* Keep primary button gradient unchanged */
+.btn-primary {
+  background: var(--grad-ocean);
+  border-color: transparent;
+}
+
+/* Card icon visibility — light theme */
+.trust-card .card-icon,
+.group .card-icon {
+  color: hsl(var(--teal));
+  background-color: hsl(var(--teal) / 0.08);
+  border-color: hsl(var(--teal) / 0.20);
+}
+
+.trust-card:hover .card-icon,
+.group:hover .card-icon {
+  color: hsl(var(--teal)) !important;
+  background-color: hsl(var(--teal) / 0.12) !important;
+  border-color: hsl(var(--teal) / 0.40) !important;
+}
+
+.card-icon svg {
+  color: inherit;
+  stroke: currentColor;
+}
+
+/* =========================================================
+   NAVBAR — WHITE LIGHT THEME
+   ========================================================= */
+
+.site-nav {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: #172033 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Navigation labels */
+.site-nav a:not(.btn-primary):not(.nav-cta) {
+  color: #172033 !important;
+}
+
+/* Navigation hover */
+.site-nav .nav-link:hover,
+.site-nav .nav-word-link:hover,
+.site-nav a:not(.btn-primary):hover {
+  color: #119f96 !important;
+}
+
+/* Navigation underline */
+.site-nav .nav-link::after {
+  background: linear-gradient(
+    90deg,
+    #087fc2,
+    #159f94
+  );
+}
+
+/* Let's Connect CTA */
+.site-nav .nav-cta,
+.site-nav a.nav-cta,
+.site-nav .btn-primary {
+  background: linear-gradient(
+    110deg,
+    #087fc2,
+    #159f94
+  ) !important;
+
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(8, 127, 194, 0.18);
+}
+
+/* CTA text and icon */
+.site-nav .nav-cta *,
+.site-nav .btn-primary * {
+  color: #ffffff !important;
+}
+
+/* CTA hover */
+.site-nav .nav-cta:hover,
+.site-nav .btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+/* Mobile menu */
+.site-nav .mobile-menu,
+.site-nav [role="menu"] {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border-color: #e2e8f0 !important;
 }

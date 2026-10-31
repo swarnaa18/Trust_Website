@@ -166,15 +166,15 @@ function Nav() {
 
       <header
         onMouseEnter={() => setVisible(true)}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        className={`site-nav fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
         <div
-          className={`relative border-b transition-all duration-500 ${
+          className={`relative border-b border-slate-200 bg-white/95 transition-all duration-500 ${
             scrolled
-              ? "border-teal/20 bg-[#07131D]/95 shadow-[0_8px_40px_rgba(0,0,0,0.28)] backdrop-blur-2xl"
-              : "border-white/[0.08] bg-[#07131D]/65 backdrop-blur-xl"
+              ? "shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-2xl"
+              : "shadow-sm backdrop-blur-xl"
           }`}
         >
           {/* Animated top accent */}
@@ -208,7 +208,7 @@ function Nav() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="nav-word-link whitespace-nowrap px-2.5 py-3 text-[13px] font-semibold text-white/75 transition-colors duration-300 hover:text-white 2xl:px-3 2xl:text-sm"
+                  className="nav-word-link whitespace-nowrap px-2.5 py-3 text-[13px] font-semibold text-slate-900 transition-colors duration-300 hover:text-teal 2xl:px-3 2xl:text-sm"
                 >
                   {item.label}
                 </a>
@@ -217,7 +217,7 @@ function Nav() {
             {/* CTA */}
             <a
               href="#contact"
-              className="nav-cta group relative hidden shrink-0 items-center gap-2 overflow-hidden rounded-full border border-teal/40 bg-teal/[0.08] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-teal hover:bg-teal hover:text-[#07131D] hover:shadow-[0_0_28px_rgba(45,212,191,0.24)] xl:inline-flex"
+              className="nav-cta group relative hidden shrink-0 items-center gap-2 overflow-hidden rounded-full border border-transparent bg-gradient-to-r from-[#087fc2] to-[#159f94] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg xl:inline-flex"
             >
               <span className="relative z-10">Let's Connect</span>
               <ChevronRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -241,7 +241,7 @@ function Nav() {
           {open && (
             <nav
               aria-label="Mobile navigation"
-              className="max-h-[75vh] overflow-y-auto border-t border-white/10 bg-[#07131D] px-5 py-4 sm:px-8 xl:hidden"
+              className="max-h-[75vh] overflow-y-auto border-t border-slate-200 bg-white px-5 py-4 sm:px-8 xl:hidden"
             >
               <div className="mx-auto grid max-w-2xl gap-1">
                 {links.map((item, index) => (
@@ -249,7 +249,7 @@ function Nav() {
                     key={`${item.label}-${index}`}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="group flex items-center justify-between rounded-xl border border-transparent px-4 py-3 text-sm text-white/70 transition-all duration-300 hover:border-teal/15 hover:bg-teal/[0.06] hover:text-teal"
+                    className="group flex items-center justify-between rounded-xl border border-transparent px-4 py-3 text-sm text-slate-800 transition-all duration-300 hover:border-teal/15 hover:bg-teal/[0.06] hover:text-teal"
                   >
                     <span>{item.label}</span>
                     <ChevronRight className="h-4 w-4 opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100" />
@@ -280,11 +280,10 @@ function VideoShowcase() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-midnight text-white"
+      className="relative isolate overflow-hidden bg-white text-slate-900"
     >
       {/* Premium ambient background */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_80%_25%,hsl(174_72%_42%/0.13),transparent_42%),radial-gradient(ellipse_at_10%_75%,hsl(200_80%_42%/0.12),transparent_45%)]" />
-
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-white" />
       <div className="container-trust mx-auto w-full max-w-[1700px] px-5 pb-12 pt-24 sm:px-8 sm:pb-16 sm:pt-28 lg:px-10 lg:pb-20 lg:pt-28">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-8 xl:gap-10">
           {/* Left: Headline and content */}
@@ -296,17 +295,17 @@ function VideoShowcase() {
               </span>
             </h1>
 
-            <h2 className="mt-6 max-w-xl text-lg font-semibold leading-snug text-white sm:text-xl lg:text-2xl">
+            <h2 className="mt-6 max-w-xl text-lg font-semibold leading-snug text-slate-900 sm:text-xl lg:text-2xl">
               Intelligence that connects health, safety and care.
             </h2>
 
-            <div className="mt-5 max-w-xl space-y-4 text-[15px] leading-7 text-slate-300 sm:text-base sm:leading-7">
+            <div className="mt-5 max-w-xl space-y-4 text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-7">
+              {" "}
               <p>
                 Trust AI develops AI-powered health intelligence technology
                 designed to support continuous monitoring, more informed care
                 and better-connected healthcare ecosystems.
               </p>
-
               <p>
                 Our Health Intelligence Wearable and Health Intelligence Layer
                 bring together multimodal sensor data, personalised analytics,
@@ -314,7 +313,6 @@ function VideoShowcase() {
                 providers and caregivers gain a more informed view of an
                 individual's wellbeing over time.
               </p>
-
               <p>
                 From elder care and assisted living to home-based monitoring and
                 clinical applications, our focus is on making health
@@ -334,7 +332,7 @@ function VideoShowcase() {
 
               <a
                 href="#contact"
-                className="btn-ghost justify-center !border-white/20 !text-white transition-colors hover:!border-teal hover:!text-teal"
+                className="btn-ghost justify-center !border-slate-300 !bg-white !text-slate-900 transition-colors hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
               >
                 Partner With Us
               </a>
@@ -480,36 +478,34 @@ function HealthIntelligenceWearable() {
         </div>
 
         {/* Introductory content */}
-        
-{/* Health Intelligence introduction */}
-<div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
 
-  {/* Left column: First and second paragraphs */}
-  <div className="space-y-5">
-    <p className="text-base leading-8 text-muted-foreground md:text-lg">
-      Healthcare often relies on periodic assessments and observations at
-      specific points in time. Yet an individual's wellbeing can change
-      between appointments, during recovery or throughout daily life.
-    </p>
+        {/* Health Intelligence introduction */}
+        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-16">
+          {/* Left column: First and second paragraphs */}
+          <div className="space-y-5">
+            <p className="text-base leading-8 text-muted-foreground md:text-lg">
+              Healthcare often relies on periodic assessments and observations
+              at specific points in time. Yet an individual's wellbeing can
+              change between appointments, during recovery or throughout daily
+              life.
+            </p>
 
-    <p className="text-base leading-8 text-muted-foreground md:text-lg">
-      Trust AI is developing an integrated Health Intelligence Wearable and
-      AI-powered intelligence layer to help bridge this gap.
-    </p>
-  </div>
+            <p className="text-base leading-8 text-muted-foreground md:text-lg">
+              Trust AI is developing an integrated Health Intelligence Wearable
+              and AI-powered intelligence layer to help bridge this gap.
+            </p>
+          </div>
 
-  {/* Right column: Third paragraph */}
-  <div>
-    <p className="text-base leading-8 text-muted-foreground md:text-lg">
-      Designed for connected care environments, the platform combines
-      wearable sensing, continuous data collection, AI-driven analysis and
-      digital dashboards to support a more comprehensive understanding of
-      individual health and safety.
-    </p>
-  </div>
-
-</div>
-
+          {/* Right column: Third paragraph */}
+          <div>
+            <p className="text-base leading-8 text-muted-foreground md:text-lg">
+              Designed for connected care environments, the platform combines
+              wearable sensing, continuous data collection, AI-driven analysis
+              and digital dashboards to support a more comprehensive
+              understanding of individual health and safety.
+            </p>
+          </div>
+        </div>
 
         {/* Feature heading */}
         <div className="mt-16 border-t border-border pt-10 md:mt-20 md:pt-12">
@@ -530,7 +526,7 @@ function HealthIntelligenceWearable() {
             <article className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7">
               {/* Icon and heading on the same row */}
               <div className="flex min-h-[60px] items-center gap-4">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                <div className="card-icon grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-all duration-300">
                   <feature.icon className="h-5 w-5" />
                 </div>
 
@@ -615,66 +611,64 @@ function ElderCare() {
       <div className="container-trust relative z-10">
         {/* Section introduction */}
 
-{/* Elder Care introduction + video */}
-<div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        {/* Elder Care introduction + video */}
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Left: Elder Care content */}
+          <div className="lg:col-span-5">
+            <p className="eyebrow text-teal">
+              Elder Care &amp; Healthcare Monitoring
+            </p>
 
-  {/* Left: Elder Care content */}
-  <div className="lg:col-span-5">
-    <p className="eyebrow text-teal">
-      Elder Care &amp; Healthcare Monitoring
-    </p>
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[42px]">
+              Enabling More Connected,{" "}
+              <span className="font-serif italic text-teal">
+                Proactive Care
+              </span>{" "}
+              for Older Adults.
+            </h2>
 
-    <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[42px]">
-      Enabling More Connected,{" "}
-      <span className="font-serif italic text-teal">
-        Proactive Care
-      </span>{" "}
-      for Older Adults.
-    </h2>
+            <div className="mt-6 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
+              <p>
+                As populations age and care increasingly extends beyond hospital
+                walls, healthcare organisations need better ways to understand
+                changes in wellbeing, support safety and maintain continuity
+                between clinical encounters.
+              </p>
 
-    <div className="mt-6 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
-      <p>
-        As populations age and care increasingly extends beyond hospital
-        walls, healthcare organisations need better ways to understand
-        changes in wellbeing, support safety and maintain continuity
-        between clinical encounters.
-      </p>
+              <p>
+                Trust AI's Health Intelligence Wearable is designed to support
+                elder care across assisted living, home care, rehabilitation and
+                post-hospital recovery environments.
+              </p>
 
-      <p>
-        Trust AI's Health Intelligence Wearable is designed to support
-        elder care across assisted living, home care, rehabilitation and
-        post-hospital recovery environments.
-      </p>
+              <p>
+                By combining wearable sensing, cellular connectivity, safety
+                features and longitudinal health intelligence, the platform
+                helps care teams move towards a more continuous and connected
+                approach to monitoring.
+              </p>
+            </div>
+          </div>
 
-      <p>
-        By combining wearable sensing, cellular connectivity, safety
-        features and longitudinal health intelligence, the platform helps
-        care teams move towards a more continuous and connected approach
-        to monitoring.
-      </p>
-    </div>
-  </div>
+          {/* Right: Elder Care video */}
+          <div className="lg:col-span-7">
+            <div className="relative">
+              <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] bg-teal/[0.10] blur-2xl" />
 
-  {/* Right: Elder Care video */}
-  <div className="lg:col-span-7">
-    <div className="relative">
-      <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] bg-teal/[0.10] blur-2xl" />
-
-      <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:rounded-3xl">
-        <video
-          src={elderCareVideo}
-          controls
-          playsInline
-          preload="metadata"
-className="block aspect-video w-full bg-black object-cover"        >
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-
-</div>
-
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:rounded-3xl">
+                <video
+                  src={elderCareVideo}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="block aspect-video w-full bg-black object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* <div className="mx-auto max-w-4xl text-center">
           <p className="eyebrow text-teal">
@@ -709,8 +703,6 @@ className="block aspect-video w-full bg-black object-cover"        >
             </p>
           </div>
         </div> */}
-
-        
 
         {/* Elder care applications */}
         <div className="mt-16 sm:mt-20">
@@ -1007,61 +999,57 @@ function GenixNGSPartnership() {
       <div className="container-trust relative z-10">
         {/* Partnership heading */}
 
-{/* Partnership introduction + Genix NGS Video */}
-<div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        {/* Partnership introduction + Genix NGS Video */}
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Left: Partnership content */}
+          <div className="lg:col-span-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+              <Globe2 className="h-4 w-4" />
+              Global Partnership
+            </div>
 
-  {/* Left: Partnership content */}
-  <div className="lg:col-span-5">
-    <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-      <Globe2 className="h-4 w-4" />
-      Global Partnership
-    </div>
+            <h2 className="mt-6 text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
+              Genix NGS Analyses —{" "}
+              <span className="font-serif italic font-bold text-teal">
+                Global Partnership.
+              </span>
+            </h2>
 
-    <h2 className="mt-6 text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
-      Genix NGS Analyses —{" "}
-      <span className="font-serif italic font-bold text-teal">
-        Global Partnership.
-      </span>
-    </h2>
+            <h3 className="mt-7 text-xl font-semibold leading-snug text-white sm:text-2xl">
+              Advancing Genomic Data Analysis Through AI.
+            </h3>
 
-    <h3 className="mt-7 text-xl font-semibold leading-snug text-white sm:text-2xl">
-      Advancing Genomic Data Analysis Through AI.
-    </h3>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
+              <p>
+                Trust AI is a Global Partner of Genix NGS Analyses, an
+                independent, AI-powered NGS Advanced Analysis
+                Software-as-a-Service (SaaS) platform from Genix.
+              </p>
 
-    <div className="mt-5 space-y-4 text-sm leading-7 text-white/70 sm:text-base">
-      <p>
-        Trust AI is a Global Partner of Genix NGS Analyses, an
-        independent, AI-powered NGS Advanced Analysis
-        Software-as-a-Service (SaaS) platform from Genix.
-      </p>
+              <p>
+                The platform is focused on advanced analysis of next-generation
+                sequencing (NGS) data, helping make complex genomic datasets
+                more accessible for analytical interpretation and research
+                workflows.
+              </p>
+            </div>
+          </div>
 
-      <p>
-        The platform is focused on advanced analysis of next-generation
-        sequencing (NGS) data, helping make complex genomic datasets more
-        accessible for analytical interpretation and research workflows.
-      </p>
-    </div>
-  </div>
-
-  {/* Right: Genix video */}
-  <div className="lg:col-span-7">
-    <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
-      <video
-        src={genixVideo}
-        controls
-        playsInline
-        preload="metadata"
-        className="block aspect-video w-full bg-black object-contain"
-      >
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-</div>
-
-
-
+          {/* Right: Genix video */}
+          <div className="lg:col-span-7">
+            <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
+              <video
+                src={genixVideo}
+                controls
+                playsInline
+                preload="metadata"
+                className="block aspect-video w-full bg-black object-contain"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
 
         {/*<div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
@@ -1096,7 +1084,7 @@ function GenixNGSPartnership() {
         </div>*/}
 
         {/* Genix NGS Video */}
-       {/* <div className="mt-12">
+        {/* <div className="mt-12">
           <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-[0_24px_70px_-25px_rgba(20,184,166,0.22)] sm:rounded-3xl">
             <video
               src={genixVideo}
@@ -1151,7 +1139,7 @@ function GenixNGSPartnership() {
                   key={item.title}
                   className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-white/[0.07]"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal/10 group-hover:text-teal">
                     <Icon className="h-5 w-5" />
                   </div>
 
@@ -1255,7 +1243,7 @@ function ClinicalApplications() {
                 className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] sm:p-8"
               >
                 <div className="flex items-center gap-4">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                  <div className="card-icon grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-all duration-300">
                     <Icon className="h-5 w-5" />
                   </div>
 
@@ -1353,7 +1341,7 @@ function ClinicalResearchInnovation() {
                 className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-white/[0.07] sm:p-8"
               >
                 <div className="flex items-center gap-4">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal/10 group-hover:text-teal">
                     <Icon className="h-5 w-5" />
                   </div>
 
@@ -1440,7 +1428,7 @@ function OurApproach() {
                 key={item.title}
                 className="group rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] sm:p-7"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+                <div className="grid h-12 w-12 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-colors duration-300 group-hover:bg-teal/10 group-hover:text-teal">
                   <Icon className="h-5 w-5" />
                 </div>
 
