@@ -522,8 +522,10 @@ function HealthIntelligenceWearable() {
         {/* Responsive feature grid */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {features.map((feature) => (
-            <article className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7">
-              {/* Icon and heading on the same row */}
+<article
+  key={feature.title}
+  className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_18px_45px_-25px_hsl(var(--teal)/0.35)] md:p-7"
+>              {/* Icon and heading on the same row */}
               <div className="flex min-h-[60px] items-center gap-4">
                 <div className="card-icon grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal/20 bg-teal/[0.08] text-teal transition-all duration-300">
                   <feature.icon className="h-5 w-5" />
@@ -3142,12 +3144,21 @@ function CTA() {
           predictive care.
         </p>
         <div className="reveal mt-10 flex flex-wrap justify-center gap-3">
-          <a href="mailto:hello@trust.health" className="btn-primary">
-            Request a Pilot <ChevronRight className="h-4 w-4" />
-          </a>
-          <a
-  href="mailto:hello@trust.health"
-  className="btn-ghost inline-flex items-center justify-center rounded-full !border-slate-300 !bg-white !text-slate-900 px-8 py-4 text-sm font-semibold shadow-sm transition-all duration-300 hover:!border-teal hover:!bg-teal/5 hover:!text-teal"
+          {/* Request a Pilot */}
+<a
+  href="#contact"
+  className="btn-primary"
+>
+  Request a Pilot
+  <ChevronRight size={18} />
+</a>
+
+{/* Schedule a Demo */}
+<a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@trust.health&su=Schedule%20a%20Demo"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-ghost"
 >
   Schedule a Demo
 </a>
