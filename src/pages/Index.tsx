@@ -2561,7 +2561,7 @@ function Team() {
     {
       name: "Guilherme Barcellos",
       role: "Director – Business Development & Strategic Partnerships",
-      img: Subidita,
+      // img: Subidita,
       icon: Users,
       d: "Driving US market expansion, enterprise sales, and strategic healthcare partnerships.",
    },
