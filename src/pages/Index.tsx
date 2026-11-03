@@ -16,6 +16,7 @@ import Agnelo from "@/assets/trust/Agnelo.png";
 import Arnav from "@/assets/trust/Arnav.jpg";
 import Thomas from "@/assets/trust/Thomas.png";
 // import Subidita from "@/assets/trust/Subidita.jpg";
+import Guilherme from "@/assets/trust/Guilherme.jpeg"
 import Manish from "@/assets/trust/Manish.jpg";
 import Balraj from "@/assets/trust/Balraj.jpeg";
 import awardsImg from "@/assets/trust/award1.png";
@@ -1262,7 +1263,7 @@ function ClinicalResearchInnovation() {
       icon: ShieldCheck,
       title: "Proprietary Sensor Architecture",
       description:
-        "Trust AI's multimodal sensor architecture is associated with Indian patent number 202311085117.",
+        "Trust AI's multimodal sensor architecture is associated with Indian patent.",
     },
     {
       icon: FlaskConical,
@@ -2561,7 +2562,7 @@ function Team() {
     {
       name: "Guilherme Barcellos",
       role: "Director – Business Development & Strategic Partnerships",
-      // img: Subidita,
+      img: Guilherme,
       icon: Users,
       d: "Driving US market expansion, enterprise sales, and strategic healthcare partnerships.",
    },
