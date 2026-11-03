@@ -2559,12 +2559,12 @@ function Team() {
   ];
   const executiveLeadership = [
     {
-      name: "Subidita Chakraborty",
-      role: "Senior Vice President – Partnerships & Alliances",
+      name: "Guilherme Barcellos",
+      role: "Director – Business Development & Strategic Partnerships",
       img: Subidita,
       icon: Users,
-      d: "Builds strategic partnerships across healthcare, corporates, governments, research institutions, and global ecosystems to accelerate adoption and strategic growth.",
-    },
+      d: "Driving US market expansion, enterprise sales, and strategic healthcare partnerships.",
+   },
     // {
     //   name: "Manish Dash Sharma",
     //   role: "Chief Technology Officer (CTO)",
