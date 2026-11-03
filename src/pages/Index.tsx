@@ -15,7 +15,7 @@ import partnershipImg from "@/assets/trust/partnership.jpeg";
 import Agnelo from "@/assets/trust/Agnelo.png";
 import Arnav from "@/assets/trust/Arnav.jpg";
 import Thomas from "@/assets/trust/Thomas.png";
-import Subidita from "@/assets/trust/Subidita.jpg";
+// import Subidita from "@/assets/trust/Subidita.jpg";
 import Manish from "@/assets/trust/Manish.jpg";
 import Balraj from "@/assets/trust/Balraj.jpeg";
 import awardsImg from "@/assets/trust/award1.png";
