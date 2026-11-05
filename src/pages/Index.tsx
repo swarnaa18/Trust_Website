@@ -16,9 +16,10 @@ import Agnelo from "@/assets/trust/Agnelo.png";
 import Arnav from "@/assets/trust/Arnav.jpg";
 import Thomas from "@/assets/trust/Thomas.png";
 // import Subidita from "@/assets/trust/Subidita.jpg";
-import Guilherme from "@/assets/trust/Guilherme.jpeg"
+import Guilherme from "@/assets/trust/Guilherme.jpeg";
+import Prathinav from "@/assets/trust/Prathinav.jpeg";
 import Manish from "@/assets/trust/Manish.jpg";
-import Balraj from "@/assets/trust/Balraj.jpeg";
+// import Balraj from "@/assets/trust/Balraj.jpeg";
 import awardsImg from "@/assets/trust/award1.png";
 import awardsImg2 from "@/assets/trust/award2.png";
 import awardsImg3 from "@/assets/trust/award3.jpeg";
@@ -2574,20 +2575,14 @@ function Team() {
     //   d: "Leads AI product engineering, platform architecture, and technology innovation, transforming cutting-edge research into scalable, production-ready healthcare solutions.",
     // },
     {
-      name: "Balraj Kapini",
-      role: "Chief Communications Officer (CCO)",
-      img: Balraj,
-      icon: Pill,
-      d: "Leads corporate communications, brand strategy, multilingual content, public relations, and stakeholder engagement across healthcare, government, and enterprise initiatives.",
-    },
-  ];
-  const aiEngineering = [
-    {
       name: "Prathinav Karnala Venkata",
-      role: "Pre-Sales Manager",
+      role: "Technology Pre-Sales and Deployment Manager",
+      img: Prathinav,
       icon: Network,
       d: "Prathinav holds a Master’s degree in Information Technology from the University of Maryland. He brings healthcare technology experience from CareStack, along with an understanding of home care and customer relations. Based in New York, he leads pre-sales operations across the East Coast.",
     },
+  ];
+  const aiEngineering = [
     {
       name: "Vishnu Priyan",
       role: "AI Developer",
