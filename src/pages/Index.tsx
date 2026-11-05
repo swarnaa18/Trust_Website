@@ -2579,7 +2579,7 @@ function Team() {
       role: "Technology Pre-Sales and Deployment Manager",
       img: Prathinav,
       icon: Network,
-      d: "Prathinav holds a Robotics from the University of Maryland. He brings healthcare technology experience from CareStack, along with an understanding of home care and customer relations. Based in New York, he leads pre-sales operations across the East Coast.",
+      d: "Prathinav holds a Master’s degree in Robotics from the University of Maryland. He brings healthcare technology experience from CareStack, along with an understanding of home care and customer relations. Based in New York, he leads pre-sales operations across the East Coast.",
     },
   ];
   const aiEngineering = [
