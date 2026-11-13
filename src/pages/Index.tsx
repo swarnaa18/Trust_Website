@@ -2599,12 +2599,6 @@ function Team() {
 
   const operations = [
     {
-      name: "Vinodhini Shailender",
-      role: "Compliance Officer",
-      icon: ShieldCheck,
-      d: "Oversees regulatory compliance, governance, quality systems, documentation, and organizational policies, ensuring adherence to healthcare and data protection standards.",
-    },
-    {
       name: "Anamitra Acharya",
       role: "Head – Management Services",
       icon: Users,
