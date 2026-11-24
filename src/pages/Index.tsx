@@ -416,7 +416,6 @@ function VideoShowcase() {
 //     </section>
 //   );
 // }
-
 /* ---------- Health Intelligence Wearable ---------- */
 
 function HealthIntelligenceWearable() {
